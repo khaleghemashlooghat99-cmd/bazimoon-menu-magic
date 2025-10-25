@@ -20,7 +20,7 @@ const Category = () => {
 
   return (
     <div className="min-h-screen bg-background page-enter">
-      {/* Banner with back button */}
+      {/* Banner */}
       <div className="sticky top-0 z-10 shadow-glow">
         <div className="relative h-48 overflow-hidden">
           <img
@@ -29,15 +29,6 @@ const Category = () => {
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
-          
-          {/* Floating back button */}
-          <Button
-            onClick={() => navigate("/")}
-            size="icon"
-            className="absolute top-4 left-4 w-12 h-12 rounded-full bg-background/90 hover:bg-background text-foreground border-2 border-primary shadow-glow backdrop-blur-sm transition-all duration-300 hover:scale-110"
-          >
-            <ArrowLeft className="h-5 w-5" />
-          </Button>
 
           <h1 className="absolute bottom-4 left-0 right-0 text-3xl font-bold text-center text-white drop-shadow-lg">
             {category.name}
@@ -75,7 +66,16 @@ const Category = () => {
         ))}
       </div>
 
-      <div className="h-6" />
+      <div className="h-24" />
+
+      {/* Fixed floating back button at bottom-left */}
+      <Button
+        onClick={() => navigate("/")}
+        size="icon"
+        className="fixed bottom-6 left-6 w-14 h-14 rounded-full bg-primary hover:bg-primary-glow text-primary-foreground border-2 border-primary-foreground/20 shadow-glow backdrop-blur-sm transition-all duration-300 hover:scale-110 z-20"
+      >
+        <ArrowLeft className="h-6 w-6" />
+      </Button>
     </div>
   );
 };
