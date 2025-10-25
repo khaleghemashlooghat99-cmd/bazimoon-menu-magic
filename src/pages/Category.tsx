@@ -22,7 +22,7 @@ const Category = () => {
     <div className="min-h-screen bg-background page-enter">
       {/* Banner */}
       <div className="sticky top-0 z-10 shadow-glow">
-        <div className="relative h-48 overflow-hidden">
+        <div className="relative h-64 overflow-hidden">
           <img
             src={cafeBanner}
             alt="Bazimoon Cafe"
