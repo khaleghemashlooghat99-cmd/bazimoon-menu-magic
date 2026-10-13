@@ -12,7 +12,10 @@ const Category = () => {
   if (!category) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center" dir="rtl" lang="fa">
-        <p className="text-foreground">دسته‌بندی پیدا نشد</p>
+        <p className="text-foreground">دسته‌بندی پیدا نشد😢</p>
+        <Button className="bg-primary hover:bg-primary-glow text-primary-foreground border-2 border-primary-foreground/20 shadow-glow" onClick={() => navigate("/")}>
+          برگرد به منو
+        </Button>
       </div>
     );
   }

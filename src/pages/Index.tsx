@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Facebook, Gamepad2, Instagram, MessageCircle, Sparkles } from "lucide-react";
 import { menuData } from "@/data/menuData";
 import cafeBanner from "@/assets/cafe-banner.jpg";
+import cafelogo from "@/assets/logo.png";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -18,9 +19,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
         
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-3 drop-shadow-lg">
-            Bazimoon
-          </h1>
+          <img className="h-30 w-60 mb-4" src={cafelogo} alt="Bazimoon Logo" />
           <p className="text-white/90 mb-6 text-lg drop-shadow">
             Café & Restaurant
           </p>
