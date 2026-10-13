@@ -24,7 +24,7 @@ const Category = () => {
     <div className="menu-red-bg min-h-screen page-enter" dir="rtl" lang="fa">
       {/* Banner */}
       <div className="sticky top-0 z-10 shadow-glow">
-        <div className="relative h-64 overflow-hidden">
+        <div className="banner-fade relative h-64 overflow-hidden">
           <img
             src={cafeBanner}
             alt="Bazimoon Cafe"
@@ -32,7 +32,7 @@ const Category = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
 
-          <h1 className="absolute bottom-4 left-0 right-0 text-3xl font-bold text-center text-white drop-shadow-lg">
+          <h1 className="absolute bottom-4 left-0 right-0 z-10 text-3xl font-bold text-center text-white drop-shadow-lg">
             {category.name}
           </h1>
         </div>

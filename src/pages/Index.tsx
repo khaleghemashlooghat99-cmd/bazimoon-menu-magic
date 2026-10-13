@@ -10,7 +10,7 @@ const Index = () => {
   return (
     <div className="menu-red-bg min-h-screen" dir="rtl" lang="fa">
       {/* Banner */}
-      <div className="relative h-64 overflow-hidden shadow-glow">
+      <div className="banner-fade relative h-64 overflow-hidden shadow-glow">
         <img
           src={cafeBanner}
           alt="Bazimoon Cafe"
@@ -18,7 +18,7 @@ const Index = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
         
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-4">
           <img className="h-30 w-60 mb-4" src={cafelogo} alt="Bazimoon Logo" />
           <p className="text-white/90 mb-6 text-lg drop-shadow">
             Café & Restaurant
