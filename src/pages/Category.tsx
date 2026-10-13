@@ -11,7 +11,7 @@ const Category = () => {
 
   if (!category) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center" dir="rtl" lang="fa">
+      <div className="menu-pattern-bg min-h-screen flex items-center justify-center" dir="rtl" lang="fa">
         <p className="text-foreground">دسته‌بندی پیدا نشد😢</p>
         <Button className="bg-primary hover:bg-primary-glow text-primary-foreground border-2 border-primary-foreground/20 shadow-glow" onClick={() => navigate("/")}>
           برگرد به منو
@@ -21,7 +21,7 @@ const Category = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background page-enter" dir="rtl" lang="fa">
+    <div className="menu-red-bg min-h-screen page-enter" dir="rtl" lang="fa">
       {/* Banner */}
       <div className="sticky top-0 z-10 shadow-glow">
         <div className="relative h-64 overflow-hidden">
@@ -38,37 +38,39 @@ const Category = () => {
         </div>
       </div>
 
-      <div className="container max-w-2xl mx-auto px-4 py-6 space-y-4">
-        {category.items.map((item, index) => (
-          <div
-            key={item.id}
-            className="bg-card border border-border rounded-lg overflow-hidden shadow-card hover:shadow-glow transition-all duration-300 hover:scale-[1.02]"
-            style={{
-              animation: `slideInRight 0.4s cubic-bezier(0.22, 1, 0.36, 1) ${index * 0.1}s both`
-            }}
-          >
-            <div className="flex gap-4 p-4">
-              <div className="flex-1">
-                <h3 className="text-xl font-semibold text-foreground mb-2">
-                  {item.name}
-                </h3>
-                <p className="text-2xl font-bold text-primary">
-                  ${item.price.toFixed(2)}
-                </p>
-              </div>
-              <div className="w-24 h-24 flex-shrink-0">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-full h-full object-cover rounded-lg border border-primary/30"
-                />
+      <div className="menu-pattern-bg min-h-[calc(100vh-16rem)]">
+        <div className="container max-w-2xl mx-auto px-4 py-6 space-y-4">
+          {category.items.map((item, index) => (
+            <div
+              key={item.id}
+              className="bg-card border border-border rounded-lg overflow-hidden shadow-card hover:shadow-glow transition-all duration-300 hover:scale-[1.02]"
+              style={{
+                animation: `slideInRight 0.4s cubic-bezier(0.22, 1, 0.36, 1) ${index * 0.1}s both`
+              }}
+            >
+              <div className="flex gap-4 p-4">
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold text-foreground mb-2">
+                    {item.name}
+                  </h3>
+                  <p className="text-2xl font-bold text-primary">
+                    ${item.price.toFixed(2)}
+                  </p>
+                </div>
+                <div className="w-24 h-24 flex-shrink-0">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-full object-cover rounded-lg border border-primary/30"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      <div className="h-24" />
+        <div className="h-24" />
+      </div>
 
       {/* Fixed floating back button */}
       <div className="fixed inset-x-0 bottom-[calc(1.5rem+env(safe-area-inset-bottom))] z-20 flex justify-center px-4 pointer-events-none">

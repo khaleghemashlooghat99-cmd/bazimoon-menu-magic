@@ -8,7 +8,7 @@ const Index = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-background" dir="rtl" lang="fa">
+    <div className="menu-red-bg min-h-screen" dir="rtl" lang="fa">
       {/* Banner */}
       <div className="relative h-64 overflow-hidden shadow-glow">
         <img
@@ -55,7 +55,8 @@ const Index = () => {
       </div>
 
       {/* Categories */}
-      <div className="container max-w-2xl mx-auto px-4 py-8">
+      <div className="menu-pattern-bg min-h-[calc(100vh-16rem)]">
+        <div className="container max-w-2xl mx-auto px-4 py-8">
         <h2 className="text-2xl font-bold text-foreground mb-6 text-center">
           منوی ما
         </h2>
@@ -101,6 +102,7 @@ const Index = () => {
               </h3>
             </button>
           ))}
+        </div>
         </div>
       </div>
     </div>

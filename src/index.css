@@ -60,6 +60,34 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
+  .menu-pattern-bg {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background-color: rgb(66, 13, 9);
+  }
+
+  .menu-pattern-bg::before {
+    content: "";
+    position: absolute;
+    inset: -12px;
+    z-index: 0;
+    background-image: url("./assets/bg-pattern.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    
+  }
+
+  .menu-pattern-bg > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .menu-red-bg {
+    background-color: rgb(198, 20, 26);
+  }
+
   .promo-game-tile {
     position: relative;
     isolation: isolate;
