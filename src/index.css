@@ -1,3 +1,5 @@
+@import url("https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -53,10 +55,64 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: Vazirmatn, Vazir, Tahoma, Arial, sans-serif;
   }
 }
 
 @layer utilities {
+  .promo-game-tile {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border: 2px solid hsl(280 100% 82% / 0.7);
+    background:
+      radial-gradient(circle at 16% 18%, hsl(294 100% 78% / 0.9), transparent 24%),
+      radial-gradient(circle at 84% 78%, hsl(252 100% 70% / 0.85), transparent 26%),
+      linear-gradient(135deg, hsl(284 88% 40%), hsl(263 90% 51%) 48%, hsl(300 90% 34%));
+    box-shadow:
+      0 0 24px hsl(286 100% 68% / 0.55),
+      0 18px 36px -16px hsl(270 100% 58% / 0.9);
+  }
+
+  /* .promo-game-tile::before {
+    content: "";
+    position: absolute;
+    inset: -60%;
+    z-index: -1;
+    background: conic-gradient(
+      from 90deg,
+      transparent 0deg,
+      hsl(0 0% 100% / 0.45) 34deg,
+      transparent 72deg,
+      transparent 360deg
+    );
+    animation: promoRotate 3.6s linear infinite;
+  }
+
+  .promo-game-tile::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+      110deg,
+      transparent 16%,
+      hsl(0 0% 100% / 0.5) 34%,
+      transparent 50%
+    );
+    transform: translateX(120%);
+    animation: promoShine 2.4s ease-in-out 0.7s infinite;
+  } */
+
+  .promo-spark {
+    animation: promoTwinkle 1.45s ease-in-out infinite;
+  }
+
+  .promo-gamepad {
+    animation: promoWiggle 1.8s ease-in-out infinite;
+    transform-origin: center;
+  }
+
   .page-enter {
     animation: slideInRight 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   }
@@ -84,6 +140,69 @@ All colors MUST be HSL.
     to {
       opacity: 0;
       transform: translateX(-30px);
+    }
+  }
+
+  @keyframes promoEntrance {
+    from {
+      opacity: 0;
+      transform: translateY(-18px) scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes promoFloat {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  @keyframes promoRotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes promoShine {
+    0%,
+    35% {
+      transform: translateX(120%);
+    }
+    70%,
+    100% {
+      transform: translateX(-120%);
+    }
+  }
+
+  @keyframes promoTwinkle {
+    0%,
+    100% {
+      opacity: 0.72;
+      transform: scale(0.9) rotate(0deg);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.15) rotate(18deg);
+    }
+  }
+
+  @keyframes promoWiggle {
+    0%,
+    100% {
+      transform: rotate(0deg) scale(1);
+    }
+    30% {
+      transform: rotate(-8deg) scale(1.08);
+    }
+    60% {
+      transform: rotate(8deg) scale(1.08);
     }
   }
 }

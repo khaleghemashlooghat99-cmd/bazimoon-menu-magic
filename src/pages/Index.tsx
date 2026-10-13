@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Instagram, Facebook, MessageCircle } from "lucide-react";
+import { Facebook, Gamepad2, Instagram, MessageCircle, Sparkles } from "lucide-react";
 import { menuData } from "@/data/menuData";
 import cafeBanner from "@/assets/cafe-banner.jpg";
 
@@ -7,7 +7,7 @@ const Index = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background" dir="rtl" lang="fa">
       {/* Banner */}
       <div className="relative h-64 overflow-hidden shadow-glow">
         <img
@@ -58,10 +58,25 @@ const Index = () => {
       {/* Categories */}
       <div className="container max-w-2xl mx-auto px-4 py-8">
         <h2 className="text-2xl font-bold text-foreground mb-6 text-center">
-          Our Menu
+          منوی ما
         </h2>
         
         <div className="grid grid-cols-2 gap-4">
+          <div
+            className="promo-game-tile col-span-2 flex min-h-32 items-center justify-center rounded-xl p-6 shadow-card"
+            style={{
+              animation: "promoEntrance 0.65s cubic-bezier(0.22, 1, 0.36, 1) both, promoFloat 3.2s ease-in-out 0.65s infinite"
+            }}
+          >
+            <div className="relative z-10 flex items-center justify-center gap-3 text-center">
+              <Sparkles className="h-7 w-7 text-white/90 promo-spark" />
+              <h3 className="text-2xl font-extrabold text-white drop-shadow-lg">
+                بازی کن و تخفیف بگیر!
+              </h3>
+              <Gamepad2 className="h-8 w-8 text-white/90 promo-gamepad" />
+            </div>
+          </div>
+
           {menuData.map((category, index) => (
             <button
               key={category.id}
@@ -72,7 +87,15 @@ const Index = () => {
               }}
             >
               <div className="text-5xl mb-3 group-hover:scale-110 transition-transform duration-300">
-                {category.icon}
+                {/\.(png|jpe?g|svg|webp|avif|gif)(\?.*)?$/i.test(category.icon) ? (
+                  <img
+                    src={category.icon}
+                    alt={category.name}
+                    className="mx-auto h-12 w-12 object-contain"
+                  />
+                ) : (
+                  category.icon
+                )}
               </div>
               <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
                 {category.name}

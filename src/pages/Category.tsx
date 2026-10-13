@@ -1,6 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
 import { menuData } from "@/data/menuData";
 import cafeBanner from "@/assets/cafe-banner.jpg";
 
@@ -12,14 +11,14 @@ const Category = () => {
 
   if (!category) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <p className="text-foreground">Category not found</p>
+      <div className="min-h-screen bg-background flex items-center justify-center" dir="rtl" lang="fa">
+        <p className="text-foreground">دسته‌بندی پیدا نشد</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-background page-enter">
+    <div className="min-h-screen bg-background page-enter" dir="rtl" lang="fa">
       {/* Banner */}
       <div className="sticky top-0 z-10 shadow-glow">
         <div className="relative h-64 overflow-hidden">
@@ -68,14 +67,15 @@ const Category = () => {
 
       <div className="h-24" />
 
-      {/* Fixed floating back button at bottom-left */}
-      <Button
-        onClick={() => navigate("/")}
-        size="icon"
-        className="fixed bottom-6 left-6 w-14 h-14 rounded-full bg-primary hover:bg-primary-glow text-primary-foreground border-2 border-primary-foreground/20 shadow-glow backdrop-blur-sm transition-all duration-300 hover:scale-110 z-20"
-      >
-        <ArrowLeft className="h-6 w-6" />
-      </Button>
+      {/* Fixed floating back button */}
+      <div className="fixed inset-x-0 bottom-[calc(1.5rem+env(safe-area-inset-bottom))] z-20 flex justify-center px-4 pointer-events-none">
+        <Button
+          onClick={() => navigate("/")}
+          className="pointer-events-auto h-14 w-[33.333vw] min-w-36 max-w-64 rounded-full bg-primary hover:bg-primary-glow text-primary-foreground border-2 border-primary-foreground/20 shadow-glow backdrop-blur-sm transition-all duration-300 hover:scale-105 text-base font-bold"
+        >
+          برگرد به منو
+        </Button>
+      </div>
     </div>
   );
 };
