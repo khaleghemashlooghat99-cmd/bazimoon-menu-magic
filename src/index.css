@@ -60,6 +60,26 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
+  .banner-fade {
+    overflow: visible;
+  }
+
+  .banner-fade::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -60px;
+    z-index: 2;
+    height: 150px;
+    pointer-events: none;
+    background: rgb(255 255 255 / 0.001);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 34%, black 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 34%, black 70%, transparent 100%);
+  }
+
   .banner-fade::after {
     content: "";
     position: absolute;
@@ -91,25 +111,9 @@ All colors MUST be HSL.
     
   }
 
-  .menu-pattern-bg::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    height: 140px;
-    pointer-events: none;
-    background: rgb(255 255 255 / 0.001);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    mask-image: linear-gradient(to bottom, black 0%, black 18%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 18%, transparent 100%);
-  }
-
   .menu-pattern-bg > * {
     position: relative;
-    z-index: 2;
+    z-index: 1;
   }
 
   .menu-red-bg {
