@@ -1,6 +1,8 @@
 import chickenPestoPizza from "@/assets/chicken-pesto-pizza.jpg";
 import margaritaPizza from "@/assets/margarita-pizza.jpg";
 import pepperoniPizza from "@/assets/pepperoni-pizza.jpg";
+import baconPizza from "@/assets/bacon-cream-pizza.jpg";
+import turkeybaconPizza from "@/assets/turkey-bacon-pizza.jpg";
 import espresso from "@/assets/espresso.jpg";
 import cappuccino from "@/assets/cappuccino.jpg";
 import latte from "@/assets/latte.jpg";
@@ -41,24 +43,24 @@ export const menuData: Category[] = [
     items: [
       {
         id: "chicken-pesto",
-        name: "پیتزا چیکن پستو",
-        price: 14.99,
-        image: chickenPestoPizza,
-        ingredients: "مرغ، سس پستو، پنیر موزارلا",
+        name: "پیتزا پپرونی",
+        price: 785,
+        image: pepperoniPizza,
+        ingredients: "سس مارینارا، پنیر پیتزا، فلفل هالوپینو، سوسیس پپرونی",
       },
       {
         id: "margarita",
-        name: "پیتزا مارگاریتا",
-        price: 12.99,
-        image: margaritaPizza,
-        ingredients: "سس گوجه، پنیر موزارلا، ریحان",
+        name: "پیتزا بیکن و خامه",
+        price: 980,
+        image: baconPizza,
+        ingredients: "سس خامه، پنیر پیتزا، بیکن گوشت، قارچ، زیتون سیاه، گوجه گیلاسی، فلفل دلمه",
       },
       {
         id: "pepperoni",
-        name: "پیتزا پپرونی",
-        price: 13.99,
-        image: pepperoniPizza,
-        ingredients: "پپرونی، پنیر موزارلا، سس گوجه",
+        name: "پیتزا بیکن بوقلمون",
+        price: 935,
+        image: turkeybaconPizza,
+        ingredients: "سس کف پستو، پنیر پیتزا، بیکن بوقلمون، قارچ، زیتون سبز، گوجه گیلاسی، فلفل دلمه، تاپینگ سس آلفردو",
       },
       {
         id: "chicken-pesto",
@@ -315,7 +317,7 @@ export const menuData: Category[] = [
   },
   {
     id: "board-game",
-    name: "بوردگیم",
+    name: "بردگیم",
     icon: boardGameIcon,
     items: [
       {

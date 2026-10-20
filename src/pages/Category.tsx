@@ -67,8 +67,9 @@ const Category = () => {
                       </p>
                     )}
                   </div>
-                  <p className="flex-shrink-0 border-r border-border pr-3 text-center text-base font-bold text-primary">
-                    {new Intl.NumberFormat("fa-IR").format(Math.round(item.price * 1000))} تومان
+                  <p className="flex-shrink-0 border-r border-border pr-3 flex flex-col items-center text-center text-base font-bold text-primary">
+                    <span>{new Intl.NumberFormat("fa-IR").format(Math.round(item.price * 1000))}</span>
+                    <span>تومان</span>
                   </p>
                 </div>
               ) : (
