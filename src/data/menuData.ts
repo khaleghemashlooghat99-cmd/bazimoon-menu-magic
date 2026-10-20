@@ -21,6 +21,7 @@ export interface MenuItem {
   name: string;
   price: number;
   image: string;
+  ingredients?: string;
 }
 
 export interface Category {
@@ -41,54 +42,63 @@ export const menuData: Category[] = [
         name: "پیتزا چیکن پستو",
         price: 14.99,
         image: chickenPestoPizza,
+        ingredients: "مرغ، سس پستو، پنیر موزارلا",
       },
       {
         id: "margarita",
         name: "پیتزا مارگاریتا",
         price: 12.99,
         image: margaritaPizza,
+        ingredients: "سس گوجه، پنیر موزارلا، ریحان",
       },
       {
         id: "pepperoni",
         name: "پیتزا پپرونی",
         price: 13.99,
         image: pepperoniPizza,
+        ingredients: "پپرونی، پنیر موزارلا، سس گوجه",
       },
       {
         id: "chicken-pesto",
         name: "پیتزا چیکن پستو",
         price: 14.99,
         image: chickenPestoPizza,
+        ingredients: "مرغ، سس پستو، پنیر موزارلا",
       },
       {
         id: "margarita",
         name: "پیتزا مارگاریتا",
         price: 12.99,
         image: margaritaPizza,
+        ingredients: "سس گوجه، پنیر موزارلا، ریحان",
       },
       {
         id: "pepperoni",
         name: "پیتزا پپرونی",
         price: 13.99,
         image: pepperoniPizza,
+        ingredients: "پپرونی، پنیر موزارلا، سس گوجه",
       },
       {
         id: "chicken-pesto",
         name: "پیتزا چیکن پستو",
         price: 14.99,
         image: chickenPestoPizza,
+        ingredients: "مرغ، سس پستو، پنیر موزارلا",
       },
       {
         id: "margarita",
         name: "پیتزا مارگاریتا",
         price: 12.99,
         image: margaritaPizza,
+        ingredients: "سس گوجه، پنیر موزارلا، ریحان",
       },
       {
         id: "pepperoni",
         name: "پیتزا پپرونی",
         price: 13.99,
         image: pepperoniPizza,
+        ingredients: "پپرونی، پنیر موزارلا، سس گوجه",
       }
     ],
   },

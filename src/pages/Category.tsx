@@ -48,23 +48,48 @@ const Category = () => {
                 animation: `slideInRight 0.4s cubic-bezier(0.22, 1, 0.36, 1) ${index * 0.1}s both`
               }}
             >
-              <div className="flex gap-4 p-4">
-                <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-foreground mb-2">
-                    {item.name}
-                  </h3>
-                  <p className="text-2xl font-bold text-primary">
-                    ${item.price.toFixed(2)}
+              {category.id === "pizza" ? (
+                <div className="flex min-h-28 items-center gap-3 p-3" dir="rtl">
+                  <div className="h-24 w-24 flex-shrink-0">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="h-full w-full rounded-lg border border-primary/30 object-cover"
+                    />
+                  </div>
+                  <div className="min-w-0 flex-1 text-right">
+                    <h3 className="mb-1 text-lg font-semibold text-foreground">
+                      {item.name}
+                    </h3>
+                    {item.ingredients && (
+                      <p className="text-sm leading-6 text-muted-foreground">
+                        {item.ingredients}
+                      </p>
+                    )}
+                  </div>
+                  <p className="flex-shrink-0 border-r border-border pr-3 text-center text-base font-bold text-primary">
+                    {new Intl.NumberFormat("fa-IR").format(Math.round(item.price * 1000))} تومان
                   </p>
                 </div>
-                <div className="w-24 h-24 flex-shrink-0">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-full h-full object-cover rounded-lg border border-primary/30"
-                  />
+              ) : (
+                <div className="flex gap-4 p-4">
+                  <div className="flex-1">
+                    <h3 className="mb-2 text-xl font-semibold text-foreground">
+                      {item.name}
+                    </h3>
+                    <p className="text-2xl font-bold text-primary">
+                      ${item.price.toFixed(2)}
+                    </p>
+                  </div>
+                  <div className="h-24 w-24 flex-shrink-0">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="h-full w-full rounded-lg border border-primary/30 object-cover"
+                    />
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           ))}
         </div>
