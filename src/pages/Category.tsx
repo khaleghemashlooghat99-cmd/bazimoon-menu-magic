@@ -1,11 +1,15 @@
+import { useEffect } from "react";
 import { NavLink, useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { menuData } from "@/data/menuData";
-import cafeBanner from "@/assets/cafe-banner.jpg";
 
 const Category = () => {
   const { categoryId } = useParams();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [categoryId]);
   
   const category = menuData.find(cat => cat.id === categoryId);
 
@@ -21,21 +25,12 @@ const Category = () => {
   }
 
   return (
-    <div className="menu-red-bg min-h-screen w-full overflow-x-clip" dir="rtl" lang="fa">
-      {/* Banner */}
-      <div className="sticky top-0 z-10 shadow-glow">
-        <div className="banner-fade relative h-64 overflow-hidden">
-          <img
-            src={cafeBanner}
-            alt="Bazimoon Cafe"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
-
-          <h1 className="sr-only">{category.name}</h1>
+    <div className="menu-red-bg flex min-h-screen w-full flex-col overflow-x-clip" dir="rtl" lang="fa">
+      <h1 className="sr-only">{category.name}</h1>
+      {/* Sticky category navigation */}
           <nav
             aria-label="دسته‌بندی‌های منو"
-            className="category-nav absolute bottom-4 inset-x-0 z-10 w-full max-w-full overflow-x-auto overscroll-x-contain bg-background/90 px-4 py-3 shadow-card backdrop-blur-md"
+            className="category-nav sticky top-0 z-10 w-full max-w-full overflow-x-auto overscroll-x-contain bg-background/95 px-4 py-3 shadow-card backdrop-blur-md"
           >
             <div className="flex w-max min-w-full items-center justify-center gap-3">
               {menuData.map((menuCategory) => (
@@ -56,10 +51,8 @@ const Category = () => {
               ))}
             </div>
           </nav>
-        </div>
-      </div>
 
-      <div className="menu-pattern-bg min-h-[calc(100vh-16rem)]">
+      <div className="menu-pattern-bg flex-1">
         <div className="container max-w-2xl mx-auto px-4 py-6 space-y-4">
           {category.items.map((item, index) => (
             <div
