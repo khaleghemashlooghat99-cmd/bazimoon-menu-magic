@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { NavLink, useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { menuData } from "@/data/menuData";
 import cafeBanner from "@/assets/cafe-banner.jpg";
@@ -21,7 +21,7 @@ const Category = () => {
   }
 
   return (
-    <div className="menu-red-bg min-h-screen page-enter" dir="rtl" lang="fa">
+    <div className="menu-red-bg min-h-screen w-full overflow-x-clip" dir="rtl" lang="fa">
       {/* Banner */}
       <div className="sticky top-0 z-10 shadow-glow">
         <div className="banner-fade relative h-64 overflow-hidden">
@@ -32,9 +32,30 @@ const Category = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
 
-          <h1 className="absolute bottom-4 left-0 right-0 z-10 text-3xl font-bold text-center text-white drop-shadow-lg">
-            {category.name}
-          </h1>
+          <h1 className="sr-only">{category.name}</h1>
+          <nav
+            aria-label="دسته‌بندی‌های منو"
+            className="category-nav absolute bottom-4 inset-x-0 z-10 w-full max-w-full overflow-x-auto overscroll-x-contain bg-background/90 px-4 py-3 shadow-card backdrop-blur-md"
+          >
+            <div className="flex w-max min-w-full items-center justify-center gap-3">
+              {menuData.map((menuCategory) => (
+                <NavLink
+                  key={menuCategory.id}
+                  to={`/category/${menuCategory.id}`}
+                  end
+                  className={({ isActive }) =>
+                    `flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap rounded-full border-2 px-5 py-2 text-base font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
+                      isActive
+                        ? "border-primary bg-primary text-primary-foreground shadow-glow"
+                        : "border-border bg-card text-foreground hover:border-primary hover:bg-secondary"
+                    }`
+                  }
+                >
+                  {menuCategory.name}
+                </NavLink>
+              ))}
+            </div>
+          </nav>
         </div>
       </div>
 
@@ -42,7 +63,7 @@ const Category = () => {
         <div className="container max-w-2xl mx-auto px-4 py-6 space-y-4">
           {category.items.map((item, index) => (
             <div
-              key={item.id}
+              key={`${category.id}-${item.id}-${index}`}
               className="bg-card border border-border rounded-lg overflow-hidden shadow-card hover:shadow-glow transition-all duration-300 hover:scale-[1.02]"
               style={{
                 animation: `slideInRight 0.4s cubic-bezier(0.22, 1, 0.36, 1) ${index * 0.1}s both`

@@ -60,6 +60,16 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
+  /* Hide the navigation scrollbar without disabling touch or keyboard scrolling. */
+  .category-nav {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .category-nav::-webkit-scrollbar {
+    display: none;
+  }
+
   .banner-fade {
     overflow: visible;
   }
