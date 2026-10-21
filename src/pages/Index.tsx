@@ -1,3 +1,4 @@
+import { useLayoutEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Facebook, Gamepad2, Instagram, MessageCircle, Sparkles } from "lucide-react";
 import { menuData } from "@/data/menuData";
@@ -6,6 +7,11 @@ import cafelogo from "@/assets/logo.png";
 
 const Index = () => {
   const navigate = useNavigate();
+
+  useLayoutEffect(() => {
+    // Reset before paint so returning visitors never see the previous scroll position.
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
 
   return (
     <div className="menu-red-bg min-h-screen" dir="rtl" lang="fa">

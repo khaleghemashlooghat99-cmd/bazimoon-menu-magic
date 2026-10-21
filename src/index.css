@@ -79,7 +79,7 @@ All colors MUST be HSL.
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -60px;
+    bottom: -50px;
     z-index: 2;
     height: 150px;
     pointer-events: none;
