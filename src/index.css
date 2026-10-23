@@ -112,13 +112,19 @@ All colors MUST be HSL.
   .menu-pattern-bg::before {
     content: "";
     position: absolute;
-    inset: -12px;
+    inset: 0;
     z-index: 0;
-    background-image: url("./assets/bg-pattern.png");
-    background-repeat: no-repeat;
+    background-image: url("./assets/bg-patternV.png");
+    background-repeat: repeat-y;
     background-position: center top;
-    background-size: cover;
-    
+    /* Scale with width only, so longer menus add repeats instead of zooming. */
+    background-size: 100% auto;
+  }
+
+  @media (min-width: 768px) {
+    .menu-pattern-bg::before {
+      background-image: url("./assets/bg-patternH.png");
+    }
   }
 
   .menu-pattern-bg > * {
