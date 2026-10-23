@@ -1,6 +1,7 @@
 import { useLayoutEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Facebook, Gamepad2, Instagram, MessageCircle, Sparkles } from "lucide-react";
+import { Gamepad2, Sparkles } from "lucide-react";
+import { SocialLinks } from "@/components/SocialIcons";
 import { menuData } from "@/data/menuData";
 import cafeBanner from "@/assets/cafe-banner.jpg";
 import cafelogo from "@/assets/logo.png";
@@ -31,32 +32,10 @@ const Index = () => {
           </p>
           
           {/* Social Media Icons */}
-          <div className="flex gap-6">
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-primary-glow transition-all duration-300 hover:scale-110 transform drop-shadow-lg"
-            >
-              <Instagram className="h-7 w-7" />
-            </a>
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-primary-glow transition-all duration-300 hover:scale-110 transform drop-shadow-lg"
-            >
-              <Facebook className="h-7 w-7" />
-            </a>
-            <a
-              href="https://wa.me/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-primary-glow transition-all duration-300 hover:scale-110 transform drop-shadow-lg"
-            >
-              <MessageCircle className="h-7 w-7" />
-            </a>
-          </div>
+          <SocialLinks
+            className="flex gap-6"
+            itemClassName="text-white hover:text-primary-glow transition-all duration-300 hover:scale-110 transform drop-shadow-lg"
+          />
         </div>
       </div>
 
