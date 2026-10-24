@@ -109,7 +109,7 @@ const Index = () => {
         <section className="rounded-xl border border-primary/25 bg-background/40 px-5 py-6 text-center shadow-card sm:px-8 sm:py-8" style={{ animation: "sectionEntrance 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both" }}>
           <h2 className="text-xl font-bold text-foreground sm:text-2xl">درباره ما</h2>
           <span className="mx-auto mt-3 block h-[3px] w-14 rounded-full bg-gradient-to-r from-transparent via-primary to-transparent" />
-          <p className="mx-auto mt-4 max-w-xl text-base leading-8 text-foreground/80 sm:text-lg sm:leading-9">به کافه بازیمون خوش اومدین. بیش از نیم قرن تلاش و تجربه و پشتکار پشتشه. دست کممون نگیرین</p>
+          <p className="mx-auto mt-4 max-w-xl text-base leading-8 text-foreground/80 sm:text-lg sm:leading-9">به کافه بازیمون خوش اومدین. بیش از نیم قرن تلاش و تجربه </p>
         </section>
 
         <section className="mt-4 rounded-xl border border-primary/25 bg-background/40 px-5 py-6 text-center shadow-card sm:px-8 sm:py-8" style={{ animation: "sectionEntrance 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.28s both" }}>
@@ -120,7 +120,7 @@ const Index = () => {
             <div className="flex items-center gap-3 rounded-lg border border-primary/20 bg-background/30 px-4 py-3 text-right"><Phone className="h-5 w-5 shrink-0 text-primary" /><div><p className="text-xs text-muted-foreground">شماره تماس</p><a href={`tel:${CAFE_PHONE_TEL}`} dir="ltr" className="inline-block text-base font-semibold text-foreground/90 transition-colors hover:text-primary sm:text-lg">{CAFE_PHONE_DISPLAY}</a></div></div>
             <div className="flex items-center gap-3 rounded-lg border border-primary/20 bg-background/30 px-4 py-3 text-right sm:col-span-2"><Clock className="h-5 w-5 shrink-0 text-primary" /><div><p className="text-xs text-muted-foreground">ساعت کاری</p><p className="text-sm leading-6 text-foreground/90 sm:text-base sm:leading-7">{CAFE_HOURS}</p></div></div>
           </div>
-          <div className="mt-5 flex justify-center"><a href={CAFE_MAPS_URL} target="_blank" rel="noopener noreferrer" className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-base font-bold text-primary-foreground shadow-glow transition-all duration-300 hover:scale-[1.02] hover:bg-primary-glow sm:w-auto"><Navigation className="h-5 w-5" />نمایش لوکیشن کافه</a></div>
+          <div className="mt-5 flex justify-center"><a href={CAFE_MAPS_URL} target="_blank" rel="noopener noreferrer" className="inline-flex w-half items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-base font-bold text-primary-foreground shadow-glow transition-all duration-300 hover:scale-[1.02] hover:bg-primary-glow sm:w-auto"><Navigation className="h-5 w-5" />نمایش لوکیشن کافه</a></div>
         </section>
         </div>
       </div>
