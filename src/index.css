@@ -132,6 +132,22 @@ All colors MUST be HSL.
     z-index: 1;
   }
 
+  /* Fixed screen-edge vignette from the updated menu design. */
+  .menu-pattern-bg::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(to right, rgb(8 1 0 / 0.24), transparent 30%),
+      linear-gradient(to left, rgb(8 1 0 / 0.24), transparent 30%),
+      linear-gradient(to top, rgb(8 1 0 / 0.22), transparent 26%),
+      linear-gradient(to bottom, rgb(8 1 0 / 0.16), transparent 22%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
   .menu-red-bg {
     background-color: rgb(198, 20, 26);
   }
@@ -280,5 +296,48 @@ All colors MUST be HSL.
     60% {
       transform: rotate(8deg) scale(1.08);
     }
+  }
+
+  .menu-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin: 2.75rem 0 1.75rem;
+  }
+
+  .menu-divider-line { flex: 1 1 auto; height: 1px; }
+  .menu-divider-line-start { background: linear-gradient(to right, transparent, hsl(var(--primary))); }
+  .menu-divider-line-end { background: linear-gradient(to left, transparent, hsl(var(--primary))); }
+  .menu-divider-diamond { flex: 0 0 auto; height: 11px; width: 11px; transform: rotate(45deg); background: hsl(var(--primary)); box-shadow: 0 0 14px hsl(var(--primary) / 0.7), 0 0 0 4px hsl(var(--primary) / 0.16); }
+  .menu-divider-dot { flex: 0 0 auto; height: 5px; width: 5px; border-radius: 9999px; background: hsl(var(--primary) / 0.55); }
+
+  .menu-title { display: flex; flex-direction: column; align-items: center; gap: 0.7rem; margin-bottom: 1.9rem; isolation: isolate; }
+  .menu-title-text {
+    position: relative; margin: 0; font-size: clamp(1.65rem, 5.5vw, 2.1rem); font-weight: 800; line-height: 1.6; letter-spacing: 0.015em;
+    background-image: linear-gradient(180deg, hsl(0 0% 100%) 12%, hsl(0 0% 100% / 0.82) 58%, hsl(0 80% 76% / 0.95) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 0 16px hsl(var(--primary) / 0.35));
+  }
+  .menu-title-text::before { content: ""; position: absolute; left: 50%; top: 50%; z-index: -1; width: 150%; height: 210%; transform: translate(-50%, -50%); background: radial-gradient(ellipse at center, hsl(var(--primary) / 0.2), transparent 68%); }
+  .menu-title-rule { display: flex; align-items: center; gap: 0.5rem; width: min(16rem, 78%); }
+  .menu-title-line { flex: 1 1 auto; height: 1px; }
+  .menu-title-line-start { background: linear-gradient(to right, transparent, hsl(var(--primary))); }
+  .menu-title-line-end { background: linear-gradient(to left, transparent, hsl(var(--primary))); }
+  .menu-title-diamond { flex: 0 0 auto; height: 9px; width: 9px; transform: rotate(45deg); background: hsl(var(--primary)); box-shadow: 0 0 12px hsl(var(--primary) / 0.7), 0 0 0 3px hsl(var(--primary) / 0.14); }
+  .menu-title-dot { flex: 0 0 auto; height: 4px; width: 4px; border-radius: 9999px; background: hsl(var(--primary) / 0.55); }
+
+  .menu-dividers { display: flex; flex-direction: column; gap: 2.1rem; margin-top: 2.75rem; }
+  .menu-divider--tight { margin: 0; }
+  .menu-divider-badge { display: flex; align-items: center; gap: 0.7rem; }
+  .menu-divider-badge-circle { flex: 0 0 auto; display: flex; align-items: center; justify-content: center; height: 46px; width: 46px; border-radius: 9999px; border: 1px solid hsl(var(--primary) / 0.55); background: radial-gradient(circle at 50% 35%, hsl(var(--primary) / 0.3), hsl(var(--background) / 0.92) 72%); box-shadow: 0 0 20px hsl(var(--primary) / 0.4), inset 0 0 14px hsl(var(--primary) / 0.22); color: hsl(var(--primary-glow)); }
+  .menu-divider-badge-gem { flex: 0 0 auto; height: 6px; width: 6px; transform: rotate(45deg); background: hsl(var(--primary) / 0.8); }
+  .menu-divider-triple { display: flex; flex-direction: column; gap: 6px; }
+  .menu-divider-triple-row { display: flex; align-items: center; gap: 0.55rem; }
+  .menu-divider-triple-gem { flex: 0 0 auto; height: 10px; width: 10px; transform: rotate(45deg); background: hsl(var(--primary)); box-shadow: 0 0 12px hsl(var(--primary) / 0.65); }
+  .menu-divider-triple-gem-sm { height: 6px; width: 6px; opacity: 0.75; box-shadow: 0 0 8px hsl(var(--primary) / 0.5); }
+  .menu-divider-triple-shadow { display: block; height: 1px; background: linear-gradient(to right, transparent, hsl(var(--primary) / 0.35) 45%, hsl(var(--primary) / 0.35) 55%, transparent); }
+
+  @keyframes sectionEntrance {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 }
