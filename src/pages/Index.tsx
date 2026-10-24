@@ -28,7 +28,7 @@ const Index = () => {
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-4">
           <img className="h-30 w-60 mb-4" src={cafelogo} alt="Bazimoon Logo" />
           <p className="text-white/90 mb-6 text-lg drop-shadow">
-            Café & Restaurant
+            Entertainment Cafe
           </p>
           
           {/* Social Media Icons */}

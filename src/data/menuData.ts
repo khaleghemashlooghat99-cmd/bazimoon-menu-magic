@@ -12,13 +12,23 @@ import smoothie from "@/assets/smoothie.jpg";
 import classicBurger from "@/assets/classic-burger.jpg";
 import cheeseBurger from "@/assets/cheese-burger.jpg";
 import chickenBurger from "@/assets/chicken-burger.jpg";
-import pizzaIcon from "@/assets/pizza-slice.png";
-import coffeeIcon from "@/assets/latte-art.png";
-import hotDrinkIcon from "@/assets/french-press.png";
-import starterIcon from "@/assets/nachos.png";
-import suchiIcon from "@/assets/sushi.png";
-import mafiaIcon from "@/assets/hat.png";
-import boardGameIcon from "@/assets/board-game.png";
+import pizzaIcon from "@/assets/black-white-icons/pizza.png";
+import coffeeIcon from "@/assets/black-white-icons/coffee.png";
+import milkShakeIcon from "@/assets/black-white-icons/milkshake.png";
+import starterIcon from "@/assets/black-white-icons/pasta.png";
+import suchiIcon from "@/assets/black-white-icons/sushi.png";
+import burgerIcon from "@/assets/black-white-icons/burger.png";
+import mafiaIcon from "@/assets/black-white-icons/mafia.png";
+import boardGameIcon from "@/assets/black-white-icons/board-game.png";
+import appetizerIcon from "@/assets/black-white-icons/appetizer.png";
+import iceCoffeeIcon from "@/assets/black-white-icons/ice-coffee.png";
+import teaIcon from "@/assets/black-white-icons/tea.png";
+import smoothieIcon from "@/assets/black-white-icons/smoothie.png";
+import matchaIcon from "@/assets/black-white-icons/matcha.png";
+import hotDrinkIcon from "@/assets/black-white-icons/hotdrink.png";
+import snackIcon from "@/assets/black-white-icons/snack.png";
+import sauceIcon from "@/assets/black-white-icons/sauce.png";
+
 
 export interface MenuItem {
   id: string;
@@ -38,7 +48,7 @@ export interface Category {
 export const menuData: Category[] = [
   {
     id: "pizza",
-    name: "پیتزا",
+    name: "پیــــتزا",
     icon: pizzaIcon,
     items: [
       {
@@ -108,7 +118,7 @@ export const menuData: Category[] = [
   },
   {
     id: "coffee",
-    name: "قهوه",
+    name: "اسپرسـو بـار",
     icon: coffeeIcon,
     items: [
       {
@@ -260,9 +270,37 @@ export const menuData: Category[] = [
       },
     ],
   },
+    {
+    id: "burger",
+    name: "بــرگــر",
+    icon: burgerIcon,
+    items: [
+      {
+        id: "classic-chips-cheese",
+        name: "چیپس و پنیر کلاسیک",
+        price: 6.99,
+        image: cheeseBurger,
+        ingredients: "چیپس، پنیر، ادویه",
+      },
+      {
+        id: "mushroom-chips-cheese",
+        name: "چیپس و پنیر قارچ",
+        price: 7.99,
+        image: cheeseBurger,
+        ingredients: "چیپس، پنیر، قارچ",
+      },
+      {
+        id: "special-chips-cheese",
+        name: "چیپس و پنیر ویژه",
+        price: 8.99,
+        image: chickenBurger,
+        ingredients: "چیپس، پنیر، قارچ، ژامبون",
+      },
+    ],
+  },
   {
-    id: "appetizer",
-    name: "پیش غذا",
+    id: "pasta",
+    name: "پاســـتا",
     icon: starterIcon,
     items: [
       {
@@ -288,10 +326,39 @@ export const menuData: Category[] = [
       },
     ],
   },
+  
   {
-    id: "hot-drinks",
-    name: "نوشیدنی گرم",
-    icon: hotDrinkIcon,
+    id: "sushi",
+    name: "سوشـــی",
+    icon: suchiIcon,
+    items: [
+      {
+        id: "orange-mocktail",
+        name: "ماکتیل پرتقال",
+        price: 4.99,
+        image: orangeJuice,
+        ingredients: "آب پرتقال، یخ",
+      },
+      {
+        id: "berry-mocktail",
+        name: "ماکتیل بری",
+        price: 5.99,
+        image: smoothie,
+        ingredients: "توت‌های قرمز، یخ",
+      },
+      {
+        id: "cola-mocktail",
+        name: "ماکتیل کولا",
+        price: 4.49,
+        image: cola,
+        ingredients: "نوشابه کولا، یخ",
+      },
+    ],
+  },
+  {
+    id: "milk-shake",
+    name: "میلک شیـک",
+    icon: milkShakeIcon,
     items: [
       {
         id: "tea",
@@ -324,65 +391,9 @@ export const menuData: Category[] = [
     ],
   },
   {
-    id: "mocktail",
-    name: "سوشی",
-    icon: suchiIcon,
-    items: [
-      {
-        id: "orange-mocktail",
-        name: "ماکتیل پرتقال",
-        price: 4.99,
-        image: orangeJuice,
-        ingredients: "آب پرتقال، یخ",
-      },
-      {
-        id: "berry-mocktail",
-        name: "ماکتیل بری",
-        price: 5.99,
-        image: smoothie,
-        ingredients: "توت‌های قرمز، یخ",
-      },
-      {
-        id: "cola-mocktail",
-        name: "ماکتیل کولا",
-        price: 4.49,
-        image: cola,
-        ingredients: "نوشابه کولا، یخ",
-      },
-    ],
-  },
-  {
-    id: "chips-cheese",
-    name: "چیپس و پنیر",
-    icon: "🧀",
-    items: [
-      {
-        id: "classic-chips-cheese",
-        name: "چیپس و پنیر کلاسیک",
-        price: 6.99,
-        image: cheeseBurger,
-        ingredients: "چیپس، پنیر، ادویه",
-      },
-      {
-        id: "mushroom-chips-cheese",
-        name: "چیپس و پنیر قارچ",
-        price: 7.99,
-        image: cheeseBurger,
-        ingredients: "چیپس، پنیر، قارچ",
-      },
-      {
-        id: "special-chips-cheese",
-        name: "چیپس و پنیر ویژه",
-        price: 8.99,
-        image: chickenBurger,
-        ingredients: "چیپس، پنیر، قارچ، ژامبون",
-      },
-    ],
-  },
-  {
-    id: "fried",
-    name: "سوخاری",
-    icon: "🍗",
+    id: "ice-coffee",
+    name: "آیـس کافـــی",
+    icon: iceCoffeeIcon,
     items: [
       {
         id: "fried-chicken",
@@ -408,9 +419,9 @@ export const menuData: Category[] = [
     ],
   },
   {
-    id: "sandwich",
-    name: "ساندویچ",
-    icon: "🥪",
+    id: "tea",
+    name: "چایی و دمنوش",
+    icon: teaIcon,
     items: [
       {
         id: "classic-sandwich",
@@ -432,6 +443,159 @@ export const menuData: Category[] = [
         price: 10.99,
         image: chickenBurger,
         ingredients: "مرغ گریل‌شده، کاهو، گوجه، سس مخصوص",
+      },
+    ],
+  },
+  {
+    id: "smoothie",
+    name: "ماکتیل و اسموتی",
+    icon: smoothieIcon,
+    items: [
+      {
+        id: "classic-sandwich",
+        name: "ساندویچ کلاسیک",
+        price: 8.99,
+        image: classicBurger,
+        ingredients: "نان ساندویچ، کاهو، گوجه، سس مخصوص",
+      },
+      {
+        id: "cheese-sandwich",
+        name: "ساندویچ پنیر",
+        price: 9.99,
+        image: cheeseBurger,
+        ingredients: "نان ساندویچ، پنیر، کاهو، گوجه",
+      },
+      {
+        id: "chicken-sandwich",
+        name: "ساندویچ مرغ",
+        price: 10.99,
+        image: chickenBurger,
+        ingredients: "مرغ گریل‌شده، کاهو، گوجه، سس مخصوص",
+      },
+    ],
+  },
+  {
+    id: "matcha",
+    name: "ماچــابــار",
+    icon: matchaIcon,
+    items: [
+      {
+        id: "classic-sandwich",
+        name: "ساندویچ کلاسیک",
+        price: 8.99,
+        image: classicBurger,
+        ingredients: "نان ساندویچ، کاهو، گوجه، سس مخصوص",
+      },
+      {
+        id: "cheese-sandwich",
+        name: "ساندویچ پنیر",
+        price: 9.99,
+        image: cheeseBurger,
+        ingredients: "نان ساندویچ، پنیر، کاهو، گوجه",
+      },
+      {
+        id: "chicken-sandwich",
+        name: "ساندویچ مرغ",
+        price: 10.99,
+        image: chickenBurger,
+        ingredients: "مرغ گریل‌شده، کاهو، گوجه، سس مخصوص",
+      },
+    ],
+  },
+  {
+    id: "hotdrinks",
+    name: "نوشیدنی گرم",
+    icon: hotDrinkIcon,
+    items: [
+      {
+        id: "classic-sandwich",
+        name: "ساندویچ کلاسیک",
+        price: 8.99,
+        image: classicBurger,
+        ingredients: "نان ساندویچ، کاهو، گوجه، سس مخصوص",
+      },
+      {
+        id: "cheese-sandwich",
+        name: "ساندویچ پنیر",
+        price: 9.99,
+        image: cheeseBurger,
+        ingredients: "نان ساندویچ، پنیر، کاهو، گوجه",
+      },
+      {
+        id: "chicken-sandwich",
+        name: "ساندویچ مرغ",
+        price: 10.99,
+        image: chickenBurger,
+        ingredients: "مرغ گریل‌شده، کاهو، گوجه، سس مخصوص",
+      },
+    ],
+  },
+  {
+    id: "snack",
+    name: "اسنک و چیپس پنیر",
+    icon: snackIcon,
+    items: [
+      {
+        id: "classic-sandwich",
+        name: "ساندویچ کلاسیک",
+        price: 8.99,
+        image: classicBurger,
+        ingredients: "نان ساندویچ، کاهو، گوجه، سس مخصوص",
+      },
+      {
+        id: "cheese-sandwich",
+        name: "ساندویچ پنیر",
+        price: 9.99,
+        image: cheeseBurger,
+        ingredients: "نان ساندویچ، پنیر، کاهو، گوجه",
+      },
+      {
+        id: "chicken-sandwich",
+        name: "ساندویچ مرغ",
+        price: 10.99,
+        image: chickenBurger,
+        ingredients: "مرغ گریل‌شده، کاهو، گوجه، سس مخصوص",
+      },
+    ],
+  },
+  {
+    id: "appetizer",
+    name: "پیــش غــذا",
+    icon: appetizerIcon,
+    items: [
+      {
+        id: "classic-sandwich",
+        name: "ساندویچ کلاسیک",
+        price: 8.99,
+        image: classicBurger,
+        ingredients: "نان ساندویچ، کاهو، گوجه، سس مخصوص",
+      },
+      {
+        id: "cheese-sandwich",
+        name: "ساندویچ پنیر",
+        price: 9.99,
+        image: cheeseBurger,
+        ingredients: "نان ساندویچ، پنیر، کاهو، گوجه",
+      },
+      {
+        id: "chicken-sandwich",
+        name: "ساندویچ مرغ",
+        price: 10.99,
+        image: chickenBurger,
+        ingredients: "مرغ گریل‌شده، کاهو، گوجه، سس مخصوص",
+      },
+    ],
+  },
+  {
+    id: "sauce",
+    name: "سـس اضافـه",
+    icon: sauceIcon,
+    items: [
+      {
+        id: "mafia-hourly-fee",
+        name: "هزینه بازی ساعتی",
+        price: 100000,
+        image: mafiaIcon,
       },
     ],
   },

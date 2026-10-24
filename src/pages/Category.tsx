@@ -62,7 +62,7 @@ const Category = () => {
                 animation: `slideInRight 0.4s cubic-bezier(0.22, 1, 0.36, 1) ${index * 0.1}s both`
               }}
             >
-              {["pizza", "coffee", "hot-drinks", "appetizer", "mocktail", "chips-cheese", "sandwich", "fried", "mafia", "board-game"].includes(category.id) ? (
+              {["pizza", "coffee", "hot-drinks", "pasta", "sushi", "milk-shake", "ice-coffee", "tea", "smoothie", "matcha", "burger", "snack", "appetizer", "sauce", "mafia", "board-game"].includes(category.id) ? (
                 <div className="flex min-h-28 items-center gap-3 p-3" dir="rtl">
                   <div className="h-24 w-24 flex-shrink-0">
                     <img
