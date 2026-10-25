@@ -10,6 +10,7 @@ const pricedInTomans = new Set([
 ]);
 
 const categoryScrollOffset = 96;
+const categoryActivationOffset = categoryScrollOffset + 20;
 
 const Category = () => {
   const { categoryId } = useParams();
@@ -37,7 +38,7 @@ const Category = () => {
     const updateActiveCategory = () => {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
-        const activationLine = categoryScrollOffset;
+        const activationLine = categoryActivationOffset;
         let current = sections[0];
 
         for (const section of sections) {
