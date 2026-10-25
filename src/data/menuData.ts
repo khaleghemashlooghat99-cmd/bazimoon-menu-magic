@@ -28,6 +28,7 @@ import matchaIcon from "@/assets/black-white-icons/matcha.png";
 import hotDrinkIcon from "@/assets/black-white-icons/hotdrink.png";
 import snackIcon from "@/assets/black-white-icons/snack.png";
 import sauceIcon from "@/assets/black-white-icons/sauce.png";
+import ketchupIcon from "@/assets/ketchup.jpg";
 
 
 export interface MenuItem {
@@ -482,21 +483,21 @@ export const menuData: Category[] = [
       {
         id: "classic-sandwich",
         name: "ساندویچ کلاسیک",
-        price: 8.99,
+        price: 100,
         image: classicBurger,
         ingredients: "نان ساندویچ، کاهو، گوجه، سس مخصوص",
       },
       {
         id: "cheese-sandwich",
         name: "ساندویچ پنیر",
-        price: 9.99,
+        price: 200,
         image: cheeseBurger,
         ingredients: "نان ساندویچ، پنیر، کاهو، گوجه",
       },
       {
         id: "chicken-sandwich",
         name: "ساندویچ مرغ",
-        price: 10.99,
+        price: 300,
         image: chickenBurger,
         ingredients: "مرغ گریل‌شده، کاهو، گوجه، سس مخصوص",
       },
@@ -510,21 +511,21 @@ export const menuData: Category[] = [
       {
         id: "classic-sandwich",
         name: "ساندویچ کلاسیک",
-        price: 8.99,
+        price: 111,
         image: classicBurger,
         ingredients: "نان ساندویچ، کاهو، گوجه، سس مخصوص",
       },
       {
         id: "cheese-sandwich",
         name: "ساندویچ پنیر",
-        price: 9.99,
+        price: 222,
         image: cheeseBurger,
         ingredients: "نان ساندویچ، پنیر، کاهو، گوجه",
       },
       {
         id: "chicken-sandwich",
         name: "ساندویچ مرغ",
-        price: 10.99,
+        price: 333,
         image: chickenBurger,
         ingredients: "مرغ گریل‌شده، کاهو، گوجه، سس مخصوص",
       },
@@ -592,10 +593,28 @@ export const menuData: Category[] = [
     icon: sauceIcon,
     items: [
       {
-        id: "mafia-hourly-fee",
-        name: "هزینه بازی ساعتی",
-        price: 100000,
-        image: mafiaIcon,
+        id: "ketchup",
+        name: "سس کچـــــاپ",
+        price: 40,
+        image: ketchupIcon,
+      },
+      {
+        id: "ketchup",
+        name: "سس فرانســــه",
+        price: 40,
+        image: ketchupIcon,
+      },
+      {
+        id: "ketchup",
+        name: "سس ســــیر/گریـن",
+        price: 40,
+        image: ketchupIcon,
+      },
+      {
+        id: "ketchup",
+        name: "سس سزار/میکس و استیک",
+        price: 40,
+        image: ketchupIcon,
       },
     ],
   },
@@ -607,7 +626,25 @@ export const menuData: Category[] = [
       {
         id: "mafia-hourly-fee",
         name: "هزینه بازی ساعتی",
-        price: 100000,
+        price: 100,
+        image: mafiaIcon,
+      },
+      {
+        id: "mafia-hourly-fee",
+        name: "هزینه بازی ساعتی",
+        price: 100,
+        image: mafiaIcon,
+      },
+      {
+        id: "mafia-hourly-fee",
+        name: "هزینه بازی ساعتی",
+        price: 100,
+        image: mafiaIcon,
+      },
+      {
+        id: "mafia-hourly-fee",
+        name: "هزینه بازی ساعتی",
+        price: 100,
         image: mafiaIcon,
       },
     ],
@@ -620,7 +657,25 @@ export const menuData: Category[] = [
       {
         id: "board-game-hourly-fee",
         name: "هزینه بازی ساعتی",
-        price: 100000,
+        price: 100,
+        image: boardGameIcon,
+      },
+      {
+        id: "board-game-hourly-fee",
+        name: "هزینه بازی ساعتی",
+        price: 100,
+        image: boardGameIcon,
+      },
+      {
+        id: "board-game-hourly-fee",
+        name: "هزینه بازی ساعتی",
+        price: 100,
+        image: boardGameIcon,
+      },
+      {
+        id: "board-game-hourly-fee",
+        name: "هزینه بازی ساعتی",
+        price: 100,
         image: boardGameIcon,
       },
     ],

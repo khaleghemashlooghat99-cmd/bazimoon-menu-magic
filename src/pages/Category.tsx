@@ -40,7 +40,7 @@ const categoryIcons: Record<string, LucideIcon> = {
 };
 
 const pricedInTomans = new Set([
-  "pizza", "coffee", "hot-drinks", "pasta", "sushi", "milk-shake", "ice-coffee",
+  "pizza", "coffee", "hotdrinks", "pasta", "sushi", "milk-shake", "ice-coffee",
   "tea", "smoothie", "matcha", "burger", "snack", "appetizer", "sauce", "mafia", "board-game",
 ]);
 
@@ -131,7 +131,7 @@ const Category = () => {
                 type="button"
                 aria-current={active ? "location" : undefined}
                 onClick={() => scrollToCategory(category.id)}
-                className={`flex min-h-11 shrink-0 items-center gap-2 whitespace-nowrap rounded-full border-2 px-4 py-2 text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${active ? "border-primary bg-primary text-primary-foreground shadow-glow" : "border-border bg-card text-foreground hover:border-primary hover:bg-secondary"}`}
+                className={`flex min-h-11 shrink-0 items-center gap-2 whitespace-nowrap rounded-full border-2 px-4 py-2 text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${active ? "border-primary bg-primary text-primary-foreground shadow-glow" : "border-border bg-card text-foreground hover:bg-secondary"}`}
               >
                 {category.name}
               </button>
