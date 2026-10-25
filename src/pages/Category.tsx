@@ -110,7 +110,7 @@ const Category = () => {
           {menuData.map((category) => {
             return (
               <section key={category.id} id={`menu-category-${category.id}`} className="menu-category-section scroll-mt-24" aria-label={category.name}>
-                <div className="mb-6"><Dividers icon={category.icon} /></div>
+                <div className="mb-6"><Dividers icon={category.icon} name={category.name} /></div>
                 <div className="space-y-4">
                   {category.description ? (
                     <article className="flex min-h-48 items-center gap-5 overflow-hidden rounded-xl border border-white/10 bg-zinc-950 p-5 text-white shadow-card sm:min-h-56 sm:gap-8 sm:p-8" dir="rtl">
@@ -143,7 +143,7 @@ const Category = () => {
       </main>
 
       <div className="fixed inset-x-0 bottom-[calc(1.5rem+env(safe-area-inset-bottom))] z-30 flex justify-center px-4 pointer-events-none">
-        <Button onClick={() => navigate("/")} className="pointer-events-auto h-14 w-[33.333vw] min-w-36 max-w-64 rounded-full border-2 border-primary-foreground/20 bg-primary text-base font-bold text-primary-foreground shadow-glow backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-primary-glow">برگشت به منو</Button>
+        <Button onClick={() => navigate("/")} className="pointer-events-auto h-14 w-[33.333vw] min-w-36 max-w-64 rounded-full border-2 border-primary-foreground/20 bg-primary text-base font-bold text-primary-foreground shadow-glow backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-primary-glow">برگرد به منو</Button>
       </div>
     </div>
   );
