@@ -163,6 +163,19 @@ const Category = () => {
                     </article>
                   ))}
                 </div>
+                {(category.id === "mafia" || category.id === "board-game") && (
+                  <section className="mt-6 rounded-xl border border-primary/25 bg-background/40 px-5 py-6 text-center shadow-card sm:px-8 sm:py-8">
+                    <h2 className="text-xl font-bold text-foreground sm:text-2xl">
+                      {category.id === "mafia" ? "بازی مافیا" : "بازی‌های رومیزی"}
+                    </h2>
+                    <span className="mx-auto mt-3 block h-[3px] w-14 rounded-full bg-gradient-to-r from-transparent via-primary to-transparent" />
+                    <p className="mx-auto mt-4 max-w-xl text-base leading-8 text-foreground/80 sm:text-lg sm:leading-9">
+                      {category.id === "mafia"
+                        ? "بازی مافیا در طبقه‌ای جداگانه و مخصوص با محیطی گرم و دوستانه انجام شده و محلی برای علاقه‌مندان به تجربه این بازی دسته جمعی می‌باشد. برای رزرو دک مافیا و اطلاع از سانس‌ها، با مدیریت کافه هماهنگ کنید."
+                        : "بیش از 300 مدل از انواع بردگیم در کافه بازیمون با تنوع سبک وجود دارند تا با توجه به سبک سلیقه خودتون، تعداد نفرات، حس و حال و مدت زمان لازم برای بازی از بین آن‌ها انتخاب کنید و با دوستان خود در محیط کافه تجربه کنید. هر کدام از بازی‌هایی که انتخاب کنید توسط گیم مستر کافه به شما توضیح داده خواهد شد تا به راحتی به بازی کردن بپردازید."}
+                    </p>
+                  </section>
+                )}
               </section>
             );
           })}
