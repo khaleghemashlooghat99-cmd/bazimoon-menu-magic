@@ -1,43 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import {
-  Coffee,
-  CookingPot,
-  CupSoda,
-  Droplets,
-  Flame,
-  Gamepad2,
-  GlassWater,
-  Leaf,
-  Milk,
-  Pizza,
-  Sandwich,
-  Soup,
-  Utensils,
-} from "lucide-react";
-import type { LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { menuData } from "@/data/menuData";
 import Dividers from "@/pages/dividers";
-
-const categoryIcons: Record<string, LucideIcon> = {
-  pizza: Pizza,
-  coffee: Coffee,
-  burger: Sandwich,
-  pasta: CookingPot,
-  sushi: Utensils,
-  "milk-shake": Milk,
-  "ice-coffee": GlassWater,
-  tea: CupSoda,
-  smoothie: CupSoda,
-  matcha: Leaf,
-  hotdrinks: Coffee,
-  snack: Soup,
-  appetizer: Utensils,
-  sauce: Droplets,
-  mafia: Flame,
-  "board-game": Gamepad2,
-};
 
 const pricedInTomans = new Set([
   "pizza", "coffee", "hotdrinks", "pasta", "sushi", "milk-shake", "ice-coffee",
@@ -122,7 +87,6 @@ const Category = () => {
       <nav aria-label="دسته‌بندی‌های منو" className="category-nav sticky top-0 z-20 w-full max-w-full overflow-x-auto overscroll-x-contain border-b border-border bg-background/95 px-3 py-3 shadow-card backdrop-blur-md">
         <div className="flex w-max min-w-full items-center justify-start gap-2 sm:justify-center">
           {menuData.map((category) => {
-            const Icon = categoryIcons[category.id] ?? Utensils;
             const active = activeCategoryId === category.id;
             return (
               <button
@@ -144,10 +108,9 @@ const Category = () => {
         <h1 className="sr-only">منوی بازیمون</h1>
         <div className="container mx-auto max-w-2xl space-y-12 px-4 py-7">
           {menuData.map((category) => {
-            const Icon = categoryIcons[category.id] ?? Utensils;
             return (
               <section key={category.id} id={`menu-category-${category.id}`} className="menu-category-section scroll-mt-24" aria-label={category.name}>
-                <div className="mb-6"><Dividers Icon={Icon} /></div>
+                <div className="mb-6"><Dividers icon={category.icon} /></div>
                 <div className="space-y-4">
                   {category.description ? (
                     <article className="flex min-h-48 items-center gap-5 overflow-hidden rounded-xl border border-white/10 bg-zinc-950 p-5 text-white shadow-card sm:min-h-56 sm:gap-8 sm:p-8" dir="rtl">
