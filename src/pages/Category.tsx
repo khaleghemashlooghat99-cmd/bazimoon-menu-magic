@@ -44,6 +44,8 @@ const pricedInTomans = new Set([
   "tea", "smoothie", "matcha", "burger", "snack", "appetizer", "sauce", "mafia", "board-game",
 ]);
 
+const categoryScrollOffset = 96;
+
 const Category = () => {
   const { categoryId } = useParams();
   const navigate = useNavigate();
@@ -70,8 +72,7 @@ const Category = () => {
     const updateActiveCategory = () => {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
-        const navBottom = document.querySelector(".category-nav")?.getBoundingClientRect().bottom ?? 0;
-        const activationLine = navBottom + 24;
+        const activationLine = categoryScrollOffset;
         let current = sections[0];
 
         for (const section of sections) {
