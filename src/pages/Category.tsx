@@ -149,7 +149,16 @@ const Category = () => {
               <section key={category.id} id={`menu-category-${category.id}`} className="menu-category-section scroll-mt-24" aria-label={category.name}>
                 <div className="mb-6"><Dividers Icon={Icon} /></div>
                 <div className="space-y-4">
-                  {category.items.map((item, index) => (
+                  {category.description ? (
+                    <article className="flex min-h-48 items-center gap-5 overflow-hidden rounded-xl border border-white/10 bg-zinc-950 p-5 text-white shadow-card sm:min-h-56 sm:gap-8 sm:p-8" dir="rtl">
+                      <img src={category.icon} alt="" className="h-24 w-24 shrink-0 object-contain sm:h-32 sm:w-32" />
+                      <div className="min-w-0 text-right">
+                        <h2 className="text-xl font-bold sm:text-2xl">{category.name}</h2>
+                        <span className="mt-3 block h-[3px] w-14 rounded-full bg-primary" />
+                        <p className="mt-4 text-justify text-sm leading-7 text-white/80 sm:text-base sm:leading-8">{category.description}</p>
+                      </div>
+                    </article>
+                  ) : category.items.map((item, index) => (
                     <article key={`${category.id}-${item.id}-${index}`} className="overflow-hidden rounded-lg border border-border bg-card shadow-card transition-all duration-300 hover:shadow-glow">
                       {pricedInTomans.has(category.id) ? (
                         <div className="flex min-h-28 items-center gap-3 p-3" dir="rtl">
@@ -163,19 +172,6 @@ const Category = () => {
                     </article>
                   ))}
                 </div>
-                {(category.id === "mafia" || category.id === "board-game") && (
-                  <section className="mt-6 rounded-xl border border-primary/25 bg-background/40 px-5 py-6 text-center shadow-card sm:px-8 sm:py-8">
-                    <h2 className="text-xl font-bold text-foreground sm:text-2xl">
-                      {category.id === "mafia" ? "بازی مافیا" : "بازی‌های رومیزی"}
-                    </h2>
-                    <span className="mx-auto mt-3 block h-[3px] w-14 rounded-full bg-gradient-to-r from-transparent via-primary to-transparent" />
-                    <p className="mx-auto mt-4 max-w-xl text-base leading-8 text-foreground/80 sm:text-lg sm:leading-9">
-                      {category.id === "mafia"
-                        ? "بازی مافیا در طبقه‌ای جداگانه و مخصوص با محیطی گرم و دوستانه انجام شده و محلی برای علاقه‌مندان به تجربه این بازی دسته جمعی می‌باشد. برای رزرو دک مافیا و اطلاع از سانس‌ها، با مدیریت کافه هماهنگ کنید."
-                        : "بیش از 300 مدل از انواع بردگیم در کافه بازیمون با تنوع سبک وجود دارند تا با توجه به سبک سلیقه خودتون، تعداد نفرات، حس و حال و مدت زمان لازم برای بازی از بین آن‌ها انتخاب کنید و با دوستان خود در محیط کافه تجربه کنید. هر کدام از بازی‌هایی که انتخاب کنید توسط گیم مستر کافه به شما توضیح داده خواهد شد تا به راحتی به بازی کردن بپردازید."}
-                    </p>
-                  </section>
-                )}
               </section>
             );
           })}

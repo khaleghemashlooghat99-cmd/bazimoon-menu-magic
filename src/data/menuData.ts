@@ -44,6 +44,7 @@ export interface Category {
   name: string;
   icon: string;
   items: MenuItem[];
+  description?: string;
 }
 
 export const menuData: Category[] = [
@@ -622,62 +623,14 @@ export const menuData: Category[] = [
     id: "mafia",
     name: "مافیا",
     icon: mafiaIcon,
-    items: [
-      {
-        id: "mafia-hourly-fee",
-        name: "هزینه بازی ساعتی",
-        price: 100,
-        image: mafiaIcon,
-      },
-      {
-        id: "mafia-hourly-fee",
-        name: "هزینه بازی ساعتی",
-        price: 100,
-        image: mafiaIcon,
-      },
-      {
-        id: "mafia-hourly-fee",
-        name: "هزینه بازی ساعتی",
-        price: 100,
-        image: mafiaIcon,
-      },
-      {
-        id: "mafia-hourly-fee",
-        name: "هزینه بازی ساعتی",
-        price: 100,
-        image: mafiaIcon,
-      },
-    ],
+    description: "بازی مافیا در طبقه‌ای جداگانه و مخصوص با محیطی گرم و دوستانه انجام می‌شود و محلی برای علاقه‌مندان به تجربه این بازی دسته‌جمعی است. برای رزرو دک مافیا و اطلاع از سانس‌ها، با مدیریت کافه هماهنگ کنید.",
+    items: [],
   },
   {
     id: "board-game",
     name: "بردگیم",
     icon: boardGameIcon,
-    items: [
-      {
-        id: "board-game-hourly-fee",
-        name: "هزینه بازی ساعتی",
-        price: 100,
-        image: boardGameIcon,
-      },
-      {
-        id: "board-game-hourly-fee",
-        name: "هزینه بازی ساعتی",
-        price: 100,
-        image: boardGameIcon,
-      },
-      {
-        id: "board-game-hourly-fee",
-        name: "هزینه بازی ساعتی",
-        price: 100,
-        image: boardGameIcon,
-      },
-      {
-        id: "board-game-hourly-fee",
-        name: "هزینه بازی ساعتی",
-        price: 100,
-        image: boardGameIcon,
-      },
-    ],
+    description: "بیش از 300 مدل از انواع بردگیم در کافه بازیمون با تنوع سبک وجود دارند تا با توجه به سبک سلیقه خودتون، تعداد نفرات، حس و حال و مدت زمان لازم برای بازی از بین آن‌ها انتخاب کنید و با دوستان خود در محیط کافه تجربه کنید. هر کدام از بازی‌هایی که انتخاب کنید توسط گیم مستر کافه به شما توضیح داده خواهد شد تا به راحتی به بازی کردن بپردازید.",
+    items: [],
   },
 ];
