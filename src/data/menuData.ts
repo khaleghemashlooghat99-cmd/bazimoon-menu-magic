@@ -1,17 +1,30 @@
 import chickenPestoPizza from "@/assets/chicken-pesto-pizza.jpg";
 import margaritaPizza from "@/assets/margarita-pizza.jpg";
-import pepperoniPizza from "@/assets/pepperoni-pizza.jpg";
-import baconPizza from "@/assets/bacon-cream-pizza.jpg";
-import turkeybaconPizza from "@/assets/turkey-bacon-pizza.jpg";
+import pepperoniPizza from "@/assets/pepperoni-pizza.webp";
+import baconPizza from "@/assets/bacon-cream-pizza.webp";
+import turkeybaconPizza from "@/assets/turkey-bacon-pizza.webp";
+import poldbeefPizza from "@/assets/poldbeef-pizza.webp";
+import garlicsteakPizza from "@/assets/garlicsteak-pizza.webp";
+import chickengrillPizza from "@/assets/chickengrill-pizza.webp";
+import chickenalfredoPizza from "@/assets/chicken-alfredo-pizza.jpg";
+import chickenpestoPizza from "@/assets/chicken-pesto-pizza.webp";
+import barbiquePizza from "@/assets/garlic-bread.webp";
+import garlicBread from "@/assets/garlic-bread.webp";
 import espresso from "@/assets/espresso.jpg";
 import cappuccino from "@/assets/cappuccino.jpg";
 import latte from "@/assets/latte.jpg";
 import cola from "@/assets/cola.jpg";
 import orangeJuice from "@/assets/orange-juice.jpg";
 import smoothie from "@/assets/smoothie.jpg";
-import classicBurger from "@/assets/classic-burger.jpg";
-import cheeseBurger from "@/assets/cheese-burger.jpg";
-import chickenBurger from "@/assets/chicken-burger.jpg";
+import classicBurger from "@/assets/classic-burger.webp";
+import miniclassicBurger from "@/assets/classic-burger-m.webp";
+import cheeseBurger from "@/assets/cheese-burger.webp";
+import minicheeseBurger from "@/assets/cheese-burger-m.webp";
+import chickenBurger from "@/assets/chicken-burger.webp";
+import caramelizeBurger from "@/assets/caramelized-burger.webp";
+import smokeybaconBurger from "@/assets/smokey-bacon-burger.webp";
+import chillyBurger from "@/assets/chilly-burger.webp";
+import mushroomBurger from "@/assets/mushroom-burger.webp";
 import pizzaIcon from "@/assets/black-white-icons/pizza.png";
 import coffeeIcon from "@/assets/black-white-icons/coffee.png";
 import milkShakeIcon from "@/assets/black-white-icons/milkshake.png";
@@ -54,74 +67,74 @@ export const menuData: Category[] = [
     icon: pizzaIcon,
     items: [
       {
-        id: "chicken-pesto",
-        name: "پیتزا پپرونی",
+        id: "peperoni",
+        name: "پپـــرونــــی",
         price: 785,
         image: pepperoniPizza,
         ingredients: "سس مارینارا، پنیر پیتزا، فلفل هالوپینو، سوسیس پپرونی",
       },
       {
-        id: "bacon and cream",
-        name: "پیتزا بیکن و خامه",
+        id: "baconcream",
+        name: "بیـکن و خــامه",
         price: 980,
         image: baconPizza,
         ingredients: "سس خامه، پنیر پیتزا، بیکن گوشت، قارچ، زیتون سیاه، گوجه گیلاسی، فلفل دلمه",
       },
       {
         id: "turkey",
-        name: "پیتزا بیکن بوقلمون",
+        name: "بیکـن بـوقلمـون",
         price: 935,
         image: turkeybaconPizza,
         ingredients: "سس کف پستو، پنیر پیتزا، بیکن بوقلمون، قارچ، زیتون سبز، گوجه گیلاسی، فلفل دلمه، تاپینگ سس آلفردو",
       },
       {
         id: "poldbeef",
-        name: "پیتزا پلد بیف",
+        name: "پـــلد بــــیف",
         price: 900,
-        image: chickenPestoPizza,
+        image: poldbeefPizza,
         ingredients: "سس آلفردو، پُلد بیف (گوشت ریش شده)، پنیر پیتزا، قارچ، زیتون سیاه، فلفل دلمه، گوجه گیلاسی",
       },
       {
-        id: "stake and garlic",
-        name: "پیتزا سیر و استیک",
+        id: "garlicsteak",
+        name: "ســیر و استـیک",
         price: 1060,
-        image: margaritaPizza,
+        image: garlicsteakPizza,
         ingredients: "سس سیر، پنیر پیتزا، استیک اسلایس، قارچ، زیتون سیاه، گوجه گیلاسی،  فلفل دلمه، ریحون ایتالیایی",
       },
       {
         id: "chickengrill",
-        name: "پیتزا چیکن گریل",
+        name: "چیــکن گریــل",
         price: 820,
-        image: pepperoniPizza,
+        image: chickengrillPizza,
         ingredients: "سس مارینارا، پنیر پیتزا، مرغ گریل، قارچ، زیتون سبز، فلفل دلمه، گوجه گیلاسی",
       },
       {
-        id: "alfredo",
-        name: "پیتزا آلفردو",
+        id: "chickenalfredo",
+        name: "چیـکن آلــفردو",
         price: 840,
-        image: chickenPestoPizza,
+        image: chickenalfredoPizza,
         ingredients: "سس آلفردو، پنیر پیتزا، مرغ گریل، قارچ، زیتون سبز، فلفل دلمه، گوجه گیلاسی",
       },
       {
-        id: "pesto",
-        name: "پیتزا پستو",
+        id: "chickenpesto",
+        name: "چیــکن پســـتو",
         price: 855,
-        image: margaritaPizza,
-        ingredients: "سس پستو، پنیر پیتزا، مرغ گریل، قارچ، زیتون سبز، فلفل دلمه، گوجه گیلاسی، سس پستو، ریحون ایتالیایی",
+        image: chickenpestoPizza,
+        ingredients: "سس پستو، پنیر پیتزا، مرغ گریل، قارچ، زیتون سبز، فلفل دلمه، گوجه گیلاسی، ریحون ایتالیایی",
       },
       {
-        id: "pepperoni",
-        name: "پیتزا باربیکیو",
+        id: "barbique",
+        name: "بـاربیـــــکیو",
         price: 795,
-        image: pepperoniPizza,
-        ingredients: "سس باربیکیو، پنیر پیتزا، مرغ گریل، قارچ، زیتون، فلفل دلمه، گوجه گیلاسی، سس باربیکیو",
+        image: chickenalfredoPizza,
+        ingredients: "سس باربیکیو، پنیر پیتزا، مرغ گریل، قارچ، زیتون، فلفل دلمه، گوجه گیلاسی",
       },
       {
-        id: "pepperoni",
-        name: "نان سیر",
+        id: "garlicbread",
+        name: "نـان ســــیر",
         price: 450,
-        image: pepperoniPizza,
-        ingredients: "پپرونی، پنیر موزارلا، سس گوجه",
+        image: garlicBread,
+        ingredients: "سس کف سیر، پنیر پیتزا، جعفری ساطوری، مغز تخمه آفتاب‌گردان، تاپینگ سس سیر",
       },
     ],
   },
@@ -187,67 +200,67 @@ export const menuData: Category[] = [
     icon: burgerIcon,
     items: [
       {
-        id: "classic-chips-cheese",
+        id: "classicburger",
         name: "کلاسیک برگر",
         price: 545,
-        image: cheeseBurger,
-        ingredients: "چیپس، پنیر، ادویه",
+        image: classicBurger,
+        ingredients: "نان مک، سس مخصوص، گوشت برگر، کاهو فرانسه، گوجه، خیارشور، سیب زمینی",
       },
       {
-        id: "mushroom-chips-cheese",
+        id: "cheeseburger",
         name: "چیز برگر",
         price: 600,
         image: cheeseBurger,
-        ingredients: "چیپس، پنیر، قارچ",
+        ingredients: "نان مک، سس مخصوص، گوشت برگر، پنیر گودا، کاهو فرانسه، گوجه، خیارشور، سیب زمینی",
       },
       {
-        id: "special-chips-cheese",
+        id: "mushroomburger",
         name: "ماشروم برگر",
         price: 670,
-        image: chickenBurger,
-        ingredients: "چیپس، پنیر، قارچ، ژامبون",
+        image: mushroomBurger,
+        ingredients: "نان مک، سس مخصوص، گوشت برگر، پنیر گودا، سس آلفردو، کاهو فرانسه، گوجه، خیارشور، سیب زمینی",
       },
       {
-        id: "special-chips-cheese",
+        id: "caramelizeburger",
         name: "کاراملایز برگر",
         price: 715,
-        image: chickenBurger,
-        ingredients: "چیپس، پنیر، قارچ، ژامبون",
+        image: caramelizeBurger,
+        ingredients: "نان مک، سس مخصوص، گوشت برگر، پنیر گودا، پیاز کاراملی، کاهو فرانسه، گوجه، خیارشور، گردو، سیب زمینی",
       },
       {
-        id: "special-chips-cheese",
+        id: "chillyburger",
         name: "چیلی برگر",
         price: 680,
-        image: chickenBurger,
-        ingredients: "چیپس، پنیر، قارچ، ژامبون",
+        image: chillyBurger,
+        ingredients: "نان مک، سس مخصوص، گوشت برگر، پنیر گودا، پپرونی، هالوپینو، کاهو فرانسه، گوجه، خیارشور، سیب زمینی",
       },
       {
-        id: "special-chips-cheese",
+        id: "chickenburger",
         name: "چیکن برگر",
         price: 510,
         image: chickenBurger,
-        ingredients: "چیپس، پنیر، قارچ، ژامبون",
+        ingredients: "نان مک، سس مخصوص، سینه مرغ، پنیر گودا، کاهو فرانسه، گوجه، خیارشور، سیب زمینی",
       },
       {
-        id: "special-chips-cheese",
+        id: "smokeybaconburger",
         name: "اسموکی بیکن برگر",
         price: 760,
-        image: chickenBurger,
-        ingredients: "چیپس، پنیر، قارچ، ژامبون",
+        image: smokeybaconBurger,
+        ingredients: "نان مک، سس مخصوص، گوشت برگر، پنیر گودا، بیکن گوشت، کاهو فرانسه، گوجه، خیارشور، سیب زمینی",
       },
       {
-        id: "special-chips-cheese",
+        id: "miniclassicburger",
         name: "مینی کلاسیک برگر",
         price: 335,
-        image: chickenBurger,
-        ingredients: "چیپس، پنیر، قارچ، ژامبون",
+        image: miniclassicBurger,
+        ingredients: "نان مک مینی، سس مخصوص، گوشت برگر، کاهو فرانسه، گوجه، خیارشور، سیب زمینی",
       },
       {
-        id: "special-chips-cheese",
+        id: "minicheeseburger",
         name: "مینی چیز برگر",
         price: 380,
-        image: chickenBurger,
-        ingredients: "چیپس، پنیر، قارچ، ژامبون",
+        image: minicheeseBurger,
+        ingredients: "نان مک مینی، سس مخصوص، گوشت برگر، پنیر گودا، کاهو فرانسه، گوجه، خیارشور، سیب زمینی",
       },
     ],
   },
