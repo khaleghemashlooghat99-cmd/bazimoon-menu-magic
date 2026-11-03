@@ -25,6 +25,9 @@ import caramelizeBurger from "@/assets/caramelized-burger.webp";
 import smokeybaconBurger from "@/assets/smokey-bacon-burger.webp";
 import chillyBurger from "@/assets/chilly-burger.webp";
 import mushroomBurger from "@/assets/mushroom-burger.webp";
+import pastaAlfredo from "@/assets/pasta-alfredo.webp";
+import pastaBeefAlfredo from "@/assets/pasta-beef-alfredo.webp";
+import pastaPesto from "@/assets/pasta-chicken-pesto.webp";
 import pizzaIcon from "@/assets/black-white-icons/pizza.png";
 import coffeeIcon from "@/assets/black-white-icons/coffee.png";
 import milkShakeIcon from "@/assets/black-white-icons/milkshake.png";
@@ -270,32 +273,32 @@ export const menuData: Category[] = [
     icon: starterIcon,
     items: [
       {
-        id: "seasoned-fries",
-        name: "پاستا آلفردو",
+        id: "pastaalfredo",
+        name: "آلـــــفردو",
         price: 680,
-        image: classicBurger,
-        ingredients: "سیب‌زمینی سرخ‌شده، ادویه مخصوص",
+        image: pastaAlfredo,
+        ingredients: "",
       },
       {
-        id: "garlic-bread",
-        name: "پاستا پستو",
+        id: "pastapesto",
+        name: "پســــــتو",
         price: 715,
-        image: margaritaPizza,
-        ingredients: "نان، کره و سیر",
+        image: pastaPesto,
+        ingredients: "",
       },
       {
-        id: "caesar-salad",
-        name: "پاستا بیف آلفردو",
+        id: "pastabeefalfredo",
+        name: "بیـف آلـفردو",
         price: 865,
-        image: chickenPestoPizza,
-        ingredients: "مرغ گریل‌شده، کاهو، پنیر پارمزان، سس سزار",
+        image: pastaBeefAlfredo,
+        ingredients: "",
       },
       {
-        id: "caesar-salad",
-        name: "پاستا ونیزی",
+        id: "pastavenizi",
+        name: "ونیــــــزی",
         price: 545,
         image: chickenPestoPizza,
-        ingredients: "مرغ گریل‌شده، کاهو، پنیر پارمزان، سس سزار",
+        ingredients: "",
       },
     ],
   },
