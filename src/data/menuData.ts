@@ -13,9 +13,21 @@ import garlicBread from "@/assets/garlic-bread.webp";
 import espresso from "@/assets/espresso.jpg";
 import cappuccino from "@/assets/cappuccino.jpg";
 import latte from "@/assets/latte.jpg";
-import cola from "@/assets/cola.jpg";
-import orangeJuice from "@/assets/orange-juice.jpg";
-import smoothie from "@/assets/smoothie.jpg";
+import vejimakiSushi from "@/assets/vejimaki.webp";
+import tonarollSushi from "@/assets/tonaroll.webp";
+import chickenkatsuSushi from "@/assets/chickenkatsu.webp";
+import oceanbiteSushi from "@/assets/oceanbite.webp";
+import salmonavocadoSushi from "@/assets/salmonavocado.webp";
+import zhambonChahartike from "@/assets/zhambonchahartike.webp";
+import chipsPanir from "@/assets/chipspanir.webp";
+import sibSade from "@/assets/sibsade.webp";
+import sibVizhe from "@/assets/sibvizhe.webp";
+import sibAlfredo from "@/assets/sibalfredo.webp";
+import ketfSokhari from "@/assets/ketfsokhari.webp";
+import buffaloWings from "@/assets/buffalowings.webp";
+import saladSabz from "@/assets/saladsabz.webp";
+import saladSezar from "@/assets/saladsezar.webp";
+import saladMixSteak from "@/assets/saladmixsteak.webp";
 import classicBurger from "@/assets/classic-burger.webp";
 import miniclassicBurger from "@/assets/classic-burger-m.webp";
 import cheeseBurger from "@/assets/cheese-burger.webp";
@@ -30,6 +42,7 @@ import pastaBeefAlfredo from "@/assets/pasta-beef-alfredo.webp";
 import pastaPesto from "@/assets/pasta-chicken-pesto.webp";
 import pizzaIcon from "@/assets/black-white-icons/pizza.png";
 import coffeeIcon from "@/assets/black-white-icons/coffee.png";
+import coffeeLatte from "@/assets/coffee-latte.webp";
 import milkShakeIcon from "@/assets/black-white-icons/milkshake.png";
 import starterIcon from "@/assets/black-white-icons/pasta.png";
 import suchiIcon from "@/assets/black-white-icons/sushi.png";
@@ -175,11 +188,11 @@ export const menuData: Category[] = [
         ingredients: "اسپرسو، شیر بخار داده‌شده، فوم شیر",
       },
       {
-        id: "latte",
-        name: "کافی لاته",
+        id: "coffeelatte",
+        name: "کافــی لاتـــه",
         price: 275,
-        image: latte,
-        ingredients: "اسپرسو، شیر بخار داده‌شده",
+        image: coffeeLatte,
+        ingredients: "",
       },
       {
         id: "espresso",
@@ -309,39 +322,39 @@ export const menuData: Category[] = [
     icon: suchiIcon,
     items: [
       {
-        id: "orange-mocktail",
-        name: "وجی ماکی",
+        id: "sushivegimaki",
+        name: "وجــی مـــاکی",
         price: 910,
-        image: orangeJuice,
-        ingredients: "آب پرتقال، یخ",
+        image: vejimakiSushi,
+        ingredients: "",
       },
       {
-        id: "berry-mocktail",
-        name: "چیکن کاتسو",
+        id: "sushichickenkatsu",
+        name: "چیکن کاتــسو",
         price: 1150,
-        image: smoothie,
-        ingredients: "توت‌های قرمز، یخ",
+        image: chickenkatsuSushi,
+        ingredients: "",
       },
       {
-        id: "cola-mocktail",
-        name: "اوشن بایت",
+        id: "sushioceanbite",
+        name: "اوشن بـــایت",
         price: 1330,
-        image: cola,
-        ingredients: "نوشابه کولا، یخ",
+        image: oceanbiteSushi,
+        ingredients: "",
       },
       {
-        id: "cola-mocktail",
+        id: "sushisalmonavocado",
         name: "سالمون آووکادو",
         price: 1440,
-        image: cola,
-        ingredients: "نوشابه کولا، یخ",
+        image: salmonavocadoSushi,
+        ingredients: "",
       },
       {
-        id: "cola-mocktail",
-        name: "تونارول",
+        id: "sushitonaroll",
+        name: "تـونـــارول",
         price: 1490,
-        image: cola,
-        ingredients: "نوشابه کولا، یخ",
+        image: tonarollSushi,
+        ingredients: "",
       },
     ],
   },
@@ -687,46 +700,46 @@ export const menuData: Category[] = [
     icon: snackIcon,
     items: [
       {
-        id: "classic-sandwich",
+        id: "zhambondotike",
         name: "ژامـــبون (2 تیکـه)",
         price: 345,
         image: classicBurger,
-        ingredients: "نان ساندویچ، کاهو، گوجه، سس مخصوص",
+        ingredients: "",
       },
       {
         id: "classic-sandwich",
         name: "ژامـــبون (4 تیکـه)",
         price: 625,
-        image: classicBurger,
-        ingredients: "نان ساندویچ، کاهو، گوجه، سس مخصوص",
+        image: zhambonChahartike,
+        ingredients: "",
       },
       {
-        id: "classic-sandwich",
+        id: "morghdotike",
         name: "مـــرغ (2 تیکـه)",
         price: 380,
         image: classicBurger,
-        ingredients: "نان ساندویچ، کاهو، گوجه، سس مخصوص",
+        ingredients: "",
       },
       {
         id: "classic-sandwich",
         name: "مـــرغ (4 تیکـه)",
         price: 660,
-        image: classicBurger,
-        ingredients: "نان ساندویچ، کاهو، گوجه، سس مخصوص",
+        image: zhambonChahartike,
+        ingredients: "",
       },
       {
         id: "classic-sandwich",
         name: "چیپـس پنیر ژامبـون",
         price: 785,
-        image: classicBurger,
-        ingredients: "نان ساندویچ، کاهو، گوجه، سس مخصوص",
+        image: chipsPanir,
+        ingredients: "",
       },
       {
         id: "classic-sandwich",
         name: "چیپـس پنیر مــرغ",
         price: 780,
-        image: classicBurger,
-        ingredients: "نان ساندویچ، کاهو، گوجه، سس مخصوص",
+        image: chipsPanir,
+        ingredients: "",
       },
     ],
   },
@@ -736,60 +749,60 @@ export const menuData: Category[] = [
     icon: appetizerIcon,
     items: [
       {
-        id: "classic-sandwich",
+        id: "sibsade",
         name: "سـیب ســـاده",
         price: 280,
-        image: classicBurger,
-        ingredients: "نان ساندویچ، کاهو، گوجه، سس مخصوص",
+        image: sibSade,
+        ingredients: "",
       },
       {
-        id: "cheese-sandwich",
+        id: "sibalfredo",
         name: "سـیب آلفــردو",
         price: 395,
-        image: cheeseBurger,
-        ingredients: "نان ساندویچ، پنیر، کاهو، گوجه",
+        image: sibAlfredo,
+        ingredients: "",
       },
       {
-        id: "chicken-sandwich",
-        name: "کتـف سوخـاری",
-        price: 450,
-        image: chickenBurger,
-        ingredients: "مرغ گریل‌شده، کاهو، گوجه، سس مخصوص",
-      },
-      {
-        id: "chicken-sandwich",
-        name: "بوفالــو وینگــز",
-        price: 495,
-        image: chickenBurger,
-        ingredients: "مرغ گریل‌شده، کاهو، گوجه، سس مخصوص",
-      },
-      {
-        id: "chicken-sandwich",
+        id: "sibvizhe",
         name: "ســـیب ویـــژه",
         price: 495,
-        image: chickenBurger,
-        ingredients: "مرغ گریل‌شده، کاهو، گوجه، سس مخصوص",
+        image: sibVizhe,
+        ingredients: "",
       },
       {
-        id: "chicken-sandwich",
+        id: "ketfsokhari",
+        name: "کتـف سوخـاری",
+        price: 450,
+        image: ketfSokhari,
+        ingredients: "",
+      },
+      {
+        id: "buffalowings",
+        name: "بوفالــو وینگــز",
+        price: 495,
+        image: buffaloWings,
+        ingredients: "",
+      },
+      {
+        id: "saladsezar",
         name: "ســالاد ســـزار",
         price: 680,
-        image: chickenBurger,
-        ingredients: "مرغ گریل‌شده، کاهو، گوجه، سس مخصوص",
+        image: saladSezar,
+        ingredients: "",
       },
       {
-        id: "chicken-sandwich",
+        id: "saladsabz",
         name: "ســالاد سبـــز",
         price: 555,
-        image: chickenBurger,
-        ingredients: "مرغ گریل‌شده، کاهو، گوجه، سس مخصوص",
+        image: saladSabz,
+        ingredients: "",
       },
       {
-        id: "chicken-sandwich",
+        id: "saladmixsteak",
         name: "سـالاد میکـس و استیـک",
         price: 935,
-        image: chickenBurger,
-        ingredients: "مرغ گریل‌شده، کاهو، گوجه، سس مخصوص",
+        image: saladMixSteak,
+        ingredients: "",
       },
     ],
   },
