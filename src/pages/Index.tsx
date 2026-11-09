@@ -1,6 +1,6 @@
 import { useLayoutEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Clock, Gamepad2, MapPin, Navigation, Phone, Sparkles } from "lucide-react";
+import { Clock, Gamepad2, MapPin, Navigation, Phone } from "lucide-react";
 import { SocialLinks } from "@/components/SocialIcons";
 import { menuData } from "@/data/menuData";
 import cafeBanner from "@/assets/cafe-banner.jpg";
@@ -64,12 +64,16 @@ const Index = () => {
               animation: "promoEntrance 0.65s cubic-bezier(0.22, 1, 0.36, 1) both, promoFloat 3.2s ease-in-out 0.65s infinite"
             }}
           >
-            <div className="relative z-10 flex items-center justify-center gap-3 text-center">
-              <Sparkles className="h-7 w-7 text-white/90 promo-spark" />
-              <h3 className="text-2xl font-extrabold text-white drop-shadow-lg">
-                بازی کن و تخفیف بگیر!
-              </h3>
-              <Gamepad2 className="h-8 w-8 text-white/90 promo-gamepad" />
+            <div className="relative z-10 flex w-full flex-col items-center text-center">
+              <div className="flex items-start justify-center gap-3">
+                <h3 className="text-2xl font-extrabold text-white drop-shadow-lg">
+                  بازی کن و تخفیف بگیر!
+                </h3>
+                <Gamepad2 className="mt-1 h-8 w-8 shrink-0 text-white/90 promo-gamepad" />
+              </div>
+              <span className="mt-2 rounded-full border border-white/45 bg-white/15 px-3 py-0.5 text-xs font-medium text-white/90 backdrop-blur-sm">
+                به زودی
+              </span>
             </div>
           </div>
 
