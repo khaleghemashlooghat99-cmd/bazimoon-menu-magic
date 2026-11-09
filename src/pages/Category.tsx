@@ -3,6 +3,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { menuData } from "@/data/menuData";
 import Dividers from "@/pages/dividers";
+import AddToCartControl from "@/components/cart/AddToCartControl";
+import CartButton from "@/components/cart/CartButton";
+import { makeCartKey } from "@/lib/cart";
+import { formatToman } from "@/lib/format";
 
 const pricedInTomans = new Set([
   "pizza", "coffee", "hotdrinks", "pasta", "sushi", "milk-shake", "ice-coffee",
@@ -128,7 +132,10 @@ const Category = () => {
                         <div className="flex min-h-28 items-center gap-3 p-3" dir="rtl">
                           <div className="h-24 w-24 shrink-0"><img src={item.image} alt={item.name} loading="lazy" className="h-full w-full rounded-lg border border-primary/30 object-cover" /></div>
                           <div className="min-w-0 flex-1 text-right"><h3 className="mb-1 text-lg font-semibold text-foreground">{item.name}</h3>{item.ingredients && <p className="text-sm leading-6 text-muted-foreground">{item.ingredients}</p>}</div>
-                          <p className="flex shrink-0 flex-col items-center border-r border-border pr-3 text-center text-base font-bold text-primary"><span>{new Intl.NumberFormat("fa-IR").format(Math.round(item.price * 1000))}</span><span>تومان</span></p>
+                          <div className="flex shrink-0 flex-col items-center gap-2 border-r border-border pr-3 text-center">
+                            <span className="text-base font-bold text-primary">{formatToman(item.price)}</span>
+                            <AddToCartControl cartKey={makeCartKey(category.id, item.id, index)} itemName={item.name} />
+                          </div>
                         </div>
                       ) : (
                         <div className="flex gap-4 p-4"><div className="flex-1"><h3 className="mb-2 text-xl font-semibold text-foreground">{item.name}</h3><p className="text-2xl font-bold text-primary">${item.price.toFixed(2)}</p></div><div className="h-24 w-24 shrink-0"><img src={item.image} alt={item.name} loading="lazy" className="h-full w-full rounded-lg border border-primary/30 object-cover" /></div></div>
@@ -143,8 +150,9 @@ const Category = () => {
         <div className="h-24" />
       </main>
 
-      <div className="fixed inset-x-0 bottom-[calc(1.5rem+env(safe-area-inset-bottom))] z-30 flex justify-center px-4 pointer-events-none">
+      <div className="fixed inset-x-0 bottom-[calc(1.5rem+env(safe-area-inset-bottom))] z-30 flex items-center justify-center gap-3 px-4 pointer-events-none">
         <Button onClick={() => navigate("/")} className="pointer-events-auto h-14 w-[33.333vw] min-w-36 max-w-64 rounded-full border-2 border-primary-foreground/20 bg-primary text-base font-bold text-primary-foreground shadow-glow backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-primary-glow">برگرد به منو</Button>
+        <CartButton />
       </div>
     </div>
   );
