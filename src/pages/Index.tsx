@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Clock, Gamepad2, MapPin, Navigation, Phone } from "lucide-react";
 import { SocialLinks } from "@/components/SocialIcons";
 import { menuData } from "@/data/menuData";
+import { ITEMS_PATH, type ItemsLocationState } from "@/lib/routes";
 import cafeBanner from "@/assets/cafe-banner.jpg";
 import cafelogo from "@/assets/logo.png";
 
@@ -80,7 +81,7 @@ const Index = () => {
           {menuData.map((category, index) => (
             <button
               key={category.id}
-              onClick={() => navigate(`/category/${category.id}`)}
+              onClick={() => navigate(ITEMS_PATH, { state: { categoryId: category.id } satisfies ItemsLocationState })}
               className="bg-card border-2 border-border hover:border-primary rounded-xl p-6 shadow-card hover:shadow-glow transition-all duration-300 hover:scale-105 group"
               style={{
                 animation: `slideInRight 0.4s cubic-bezier(0.22, 1, 0.36, 1) ${index * 0.1}s both`

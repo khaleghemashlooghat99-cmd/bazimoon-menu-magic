@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useCallback, useEffect, useLayoutEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { menuData } from "@/data/menuData";
 import Dividers from "@/pages/dividers";
@@ -7,6 +7,8 @@ import AddToCartControl from "@/components/cart/AddToCartControl";
 import CartButton from "@/components/cart/CartButton";
 import { makeCartKey } from "@/lib/cart";
 import { formatToman } from "@/lib/format";
+import type { ItemsLocationState } from "@/lib/routes";
+import { readScrollMemory, useScrollMemory } from "@/hooks/useScrollMemory";
 
 const pricedInTomans = new Set([
   "pizza", "coffee", "hotdrinks", "pasta", "sushi", "milk-shake", "ice-coffee",
@@ -17,21 +19,32 @@ const categoryScrollOffset = 96;
 const categoryActivationOffset = categoryScrollOffset + 20;
 
 const Category = () => {
-  const { categoryId } = useParams();
+  const location = useLocation();
   const navigate = useNavigate();
+  const requestedId = (location.state as ItemsLocationState)?.categoryId;
+  const categoryId = requestedId && menuData.some((category) => category.id === requestedId) ? requestedId : undefined;
   const [activeCategoryId, setActiveCategoryId] = useState(categoryId ?? menuData[0]?.id ?? "");
+
+  useScrollMemory(location.key);
 
   const scrollToCategory = useCallback((id: string) => {
     document.getElementById(`menu-category-${id}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
   }, []);
 
-  useEffect(() => {
-    if (categoryId && menuData.some((category) => category.id === categoryId)) {
+  // Arrival: restore this history entry's position (back/forward/reload),
+  // otherwise scroll to the category chosen on the main menu, otherwise top.
+  useLayoutEffect(() => {
+    const saved = readScrollMemory(location.key);
+    if (saved !== null) {
+      window.scrollTo({ top: saved, left: 0, behavior: "auto" });
+      return;
+    }
+    if (categoryId) {
       const frame = window.requestAnimationFrame(() => scrollToCategory(categoryId));
       return () => window.cancelAnimationFrame(frame);
     }
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-  }, [categoryId, scrollToCategory]);
+  }, [location.key, categoryId, scrollToCategory]);
 
   useEffect(() => {
     const sections = menuData
@@ -78,14 +91,6 @@ const Category = () => {
     });
   }, [activeCategoryId]);
 
-  if (!categoryId || !menuData.some((category) => category.id === categoryId)) {
-    return (
-      <div className="menu-pattern-bg flex min-h-screen items-center justify-center gap-4 px-4" dir="rtl" lang="fa">
-        <p className="text-foreground">دسته‌بندی پیدا نشد</p>
-        <Button onClick={() => navigate("/")} className="bg-primary text-primary-foreground shadow-glow">برگشت به منو</Button>
-      </div>
-    );
-  }
 
   return (
     <div className="menu-red-bg flex min-h-screen w-full flex-col overflow-x-clip" dir="rtl" lang="fa">
